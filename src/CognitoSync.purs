@@ -20,92 +20,124 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "CognitoSync" :: String
-
 
 -- | <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 bulkPublish :: forall eff. BulkPublishRequest -> Aff (exception :: EXCEPTION | eff) BulkPublishResponse
-bulkPublish = Request.request serviceName "bulkPublish" 
+bulkPublish = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "bulkPublish"
 
 
 -- | <p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 deleteDataset :: forall eff. DeleteDatasetRequest -> Aff (exception :: EXCEPTION | eff) DeleteDatasetResponse
-deleteDataset = Request.request serviceName "deleteDataset" 
+deleteDataset = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "deleteDataset"
 
 
 -- | <p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>
 describeDataset :: forall eff. DescribeDatasetRequest -> Aff (exception :: EXCEPTION | eff) DescribeDatasetResponse
-describeDataset = Request.request serviceName "describeDataset" 
+describeDataset = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "describeDataset"
 
 
 -- | <p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 describeIdentityPoolUsage :: forall eff. DescribeIdentityPoolUsageRequest -> Aff (exception :: EXCEPTION | eff) DescribeIdentityPoolUsageResponse
-describeIdentityPoolUsage = Request.request serviceName "describeIdentityPoolUsage" 
+describeIdentityPoolUsage = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "describeIdentityPoolUsage"
 
 
 -- | <p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 describeIdentityUsage :: forall eff. DescribeIdentityUsageRequest -> Aff (exception :: EXCEPTION | eff) DescribeIdentityUsageResponse
-describeIdentityUsage = Request.request serviceName "describeIdentityUsage" 
+describeIdentityUsage = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "describeIdentityUsage"
 
 
 -- | <p>Get the status of the last BulkPublish operation for an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 getBulkPublishDetails :: forall eff. GetBulkPublishDetailsRequest -> Aff (exception :: EXCEPTION | eff) GetBulkPublishDetailsResponse
-getBulkPublishDetails = Request.request serviceName "getBulkPublishDetails" 
+getBulkPublishDetails = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "getBulkPublishDetails"
 
 
 -- | <p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 getCognitoEvents :: forall eff. GetCognitoEventsRequest -> Aff (exception :: EXCEPTION | eff) GetCognitoEventsResponse
-getCognitoEvents = Request.request serviceName "getCognitoEvents" 
+getCognitoEvents = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "getCognitoEvents"
 
 
 -- | <p>Gets the configuration settings of an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 getIdentityPoolConfiguration :: forall eff. GetIdentityPoolConfigurationRequest -> Aff (exception :: EXCEPTION | eff) GetIdentityPoolConfigurationResponse
-getIdentityPoolConfiguration = Request.request serviceName "getIdentityPoolConfiguration" 
+getIdentityPoolConfiguration = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "getIdentityPoolConfiguration"
 
 
 -- | <p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>
 listDatasets :: forall eff. ListDatasetsRequest -> Aff (exception :: EXCEPTION | eff) ListDatasetsResponse
-listDatasets = Request.request serviceName "listDatasets" 
+listDatasets = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "listDatasets"
 
 
 -- | <p>Gets a list of identity pools registered with Cognito.</p> <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p>
 listIdentityPoolUsage :: forall eff. ListIdentityPoolUsageRequest -> Aff (exception :: EXCEPTION | eff) ListIdentityPoolUsageResponse
-listIdentityPoolUsage = Request.request serviceName "listIdentityPoolUsage" 
+listIdentityPoolUsage = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "listIdentityPoolUsage"
 
 
 -- | <p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>
 listRecords :: forall eff. ListRecordsRequest -> Aff (exception :: EXCEPTION | eff) ListRecordsResponse
-listRecords = Request.request serviceName "listRecords" 
+listRecords = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "listRecords"
 
 
 -- | <p>Registers a device to receive push sync notifications.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 registerDevice :: forall eff. RegisterDeviceRequest -> Aff (exception :: EXCEPTION | eff) RegisterDeviceResponse
-registerDevice = Request.request serviceName "registerDevice" 
+registerDevice = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "registerDevice"
 
 
 -- | <p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 setCognitoEvents :: forall eff. SetCognitoEventsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-setCognitoEvents = Request.request serviceName "setCognitoEvents" 
+setCognitoEvents = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "setCognitoEvents"
 
 
 -- | <p>Sets the necessary configuration for push sync.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 setIdentityPoolConfiguration :: forall eff. SetIdentityPoolConfigurationRequest -> Aff (exception :: EXCEPTION | eff) SetIdentityPoolConfigurationResponse
-setIdentityPoolConfiguration = Request.request serviceName "setIdentityPoolConfiguration" 
+setIdentityPoolConfiguration = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "setIdentityPoolConfiguration"
 
 
 -- | <p>Subscribes to receive notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 subscribeToDataset :: forall eff. SubscribeToDatasetRequest -> Aff (exception :: EXCEPTION | eff) SubscribeToDatasetResponse
-subscribeToDataset = Request.request serviceName "subscribeToDataset" 
+subscribeToDataset = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "subscribeToDataset"
 
 
 -- | <p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 unsubscribeFromDataset :: forall eff. UnsubscribeFromDatasetRequest -> Aff (exception :: EXCEPTION | eff) UnsubscribeFromDatasetResponse
-unsubscribeFromDataset = Request.request serviceName "unsubscribeFromDataset" 
+unsubscribeFromDataset = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "unsubscribeFromDataset"
 
 
 -- | <p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p> <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 updateRecords :: forall eff. UpdateRecordsRequest -> Aff (exception :: EXCEPTION | eff) UpdateRecordsResponse
-updateRecords = Request.request serviceName "updateRecords" 
+updateRecords = Request.request service method  where
+    service = Request.ServiceName "CognitoSync"
+    method = Request.MethodName "updateRecords"
 
 
 -- | An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.
