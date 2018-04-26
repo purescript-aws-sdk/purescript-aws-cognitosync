@@ -126,7 +126,7 @@ Constructs BulkPublishRequest's fields from required parameters
 
 ``` purescript
 newtype BulkPublishResponse
-  = BulkPublishResponse { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) }
+  = BulkPublishResponse { "IdentityPoolId" :: Maybe (IdentityPoolId) }
 ```
 
 The output for the BulkPublish operation.
@@ -151,7 +151,7 @@ Constructs BulkPublishResponse from required parameters
 #### `newBulkPublishResponse'`
 
 ``` purescript
-newBulkPublishResponse' :: ({ "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) } -> { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) }) -> BulkPublishResponse
+newBulkPublishResponse' :: ({ "IdentityPoolId" :: Maybe (IdentityPoolId) } -> { "IdentityPoolId" :: Maybe (IdentityPoolId) }) -> BulkPublishResponse
 ```
 
 Constructs BulkPublishResponse's fields from required parameters
@@ -208,7 +208,7 @@ Encode CognitoEventType
 
 ``` purescript
 newtype CognitoStreams
-  = CognitoStreams { "StreamName" :: NullOrUndefined (StreamName), "RoleArn" :: NullOrUndefined (AssumeRoleArn), "StreamingStatus" :: NullOrUndefined (StreamingStatus) }
+  = CognitoStreams { "StreamName" :: Maybe (StreamName), "RoleArn" :: Maybe (AssumeRoleArn), "StreamingStatus" :: Maybe (StreamingStatus) }
 ```
 
 Configuration options for configure Cognito streams.
@@ -233,7 +233,7 @@ Constructs CognitoStreams from required parameters
 #### `newCognitoStreams'`
 
 ``` purescript
-newCognitoStreams' :: ({ "StreamName" :: NullOrUndefined (StreamName), "RoleArn" :: NullOrUndefined (AssumeRoleArn), "StreamingStatus" :: NullOrUndefined (StreamingStatus) } -> { "StreamName" :: NullOrUndefined (StreamName), "RoleArn" :: NullOrUndefined (AssumeRoleArn), "StreamingStatus" :: NullOrUndefined (StreamingStatus) }) -> CognitoStreams
+newCognitoStreams' :: ({ "StreamName" :: Maybe (StreamName), "RoleArn" :: Maybe (AssumeRoleArn), "StreamingStatus" :: Maybe (StreamingStatus) } -> { "StreamName" :: Maybe (StreamName), "RoleArn" :: Maybe (AssumeRoleArn), "StreamingStatus" :: Maybe (StreamingStatus) }) -> CognitoStreams
 ```
 
 Constructs CognitoStreams's fields from required parameters
@@ -276,7 +276,7 @@ Constructs ConcurrentModificationException's fields from required parameters
 
 ``` purescript
 newtype Dataset
-  = Dataset { "IdentityId" :: NullOrUndefined (IdentityId), "DatasetName" :: NullOrUndefined (DatasetName), "CreationDate" :: NullOrUndefined (Date), "LastModifiedDate" :: NullOrUndefined (Date), "LastModifiedBy" :: NullOrUndefined (String), "DataStorage" :: NullOrUndefined (Number), "NumRecords" :: NullOrUndefined (Number) }
+  = Dataset { "IdentityId" :: Maybe (IdentityId), "DatasetName" :: Maybe (DatasetName), "CreationDate" :: Maybe (Date), "LastModifiedDate" :: Maybe (Date), "LastModifiedBy" :: Maybe (String), "DataStorage" :: Maybe (Number), "NumRecords" :: Maybe (Number) }
 ```
 
 A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
@@ -301,7 +301,7 @@ Constructs Dataset from required parameters
 #### `newDataset'`
 
 ``` purescript
-newDataset' :: ({ "IdentityId" :: NullOrUndefined (IdentityId), "DatasetName" :: NullOrUndefined (DatasetName), "CreationDate" :: NullOrUndefined (Date), "LastModifiedDate" :: NullOrUndefined (Date), "LastModifiedBy" :: NullOrUndefined (String), "DataStorage" :: NullOrUndefined (Number), "NumRecords" :: NullOrUndefined (Number) } -> { "IdentityId" :: NullOrUndefined (IdentityId), "DatasetName" :: NullOrUndefined (DatasetName), "CreationDate" :: NullOrUndefined (Date), "LastModifiedDate" :: NullOrUndefined (Date), "LastModifiedBy" :: NullOrUndefined (String), "DataStorage" :: NullOrUndefined (Number), "NumRecords" :: NullOrUndefined (Number) }) -> Dataset
+newDataset' :: ({ "IdentityId" :: Maybe (IdentityId), "DatasetName" :: Maybe (DatasetName), "CreationDate" :: Maybe (Date), "LastModifiedDate" :: Maybe (Date), "LastModifiedBy" :: Maybe (String), "DataStorage" :: Maybe (Number), "NumRecords" :: Maybe (Number) } -> { "IdentityId" :: Maybe (IdentityId), "DatasetName" :: Maybe (DatasetName), "CreationDate" :: Maybe (Date), "LastModifiedDate" :: Maybe (Date), "LastModifiedBy" :: Maybe (String), "DataStorage" :: Maybe (Number), "NumRecords" :: Maybe (Number) }) -> Dataset
 ```
 
 Constructs Dataset's fields from required parameters
@@ -392,7 +392,7 @@ Constructs DeleteDatasetRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteDatasetResponse
-  = DeleteDatasetResponse { "Dataset" :: NullOrUndefined (Dataset) }
+  = DeleteDatasetResponse { "Dataset" :: Maybe (Dataset) }
 ```
 
 Response to a successful DeleteDataset request.
@@ -417,7 +417,7 @@ Constructs DeleteDatasetResponse from required parameters
 #### `newDeleteDatasetResponse'`
 
 ``` purescript
-newDeleteDatasetResponse' :: ({ "Dataset" :: NullOrUndefined (Dataset) } -> { "Dataset" :: NullOrUndefined (Dataset) }) -> DeleteDatasetResponse
+newDeleteDatasetResponse' :: ({ "Dataset" :: Maybe (Dataset) } -> { "Dataset" :: Maybe (Dataset) }) -> DeleteDatasetResponse
 ```
 
 Constructs DeleteDatasetResponse's fields from required parameters
@@ -460,7 +460,7 @@ Constructs DescribeDatasetRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDatasetResponse
-  = DescribeDatasetResponse { "Dataset" :: NullOrUndefined (Dataset) }
+  = DescribeDatasetResponse { "Dataset" :: Maybe (Dataset) }
 ```
 
 Response to a successful DescribeDataset request.
@@ -485,7 +485,7 @@ Constructs DescribeDatasetResponse from required parameters
 #### `newDescribeDatasetResponse'`
 
 ``` purescript
-newDescribeDatasetResponse' :: ({ "Dataset" :: NullOrUndefined (Dataset) } -> { "Dataset" :: NullOrUndefined (Dataset) }) -> DescribeDatasetResponse
+newDescribeDatasetResponse' :: ({ "Dataset" :: Maybe (Dataset) } -> { "Dataset" :: Maybe (Dataset) }) -> DescribeDatasetResponse
 ```
 
 Constructs DescribeDatasetResponse's fields from required parameters
@@ -528,7 +528,7 @@ Constructs DescribeIdentityPoolUsageRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeIdentityPoolUsageResponse
-  = DescribeIdentityPoolUsageResponse { "IdentityPoolUsage" :: NullOrUndefined (IdentityPoolUsage) }
+  = DescribeIdentityPoolUsageResponse { "IdentityPoolUsage" :: Maybe (IdentityPoolUsage) }
 ```
 
 Response to a successful DescribeIdentityPoolUsage request.
@@ -553,7 +553,7 @@ Constructs DescribeIdentityPoolUsageResponse from required parameters
 #### `newDescribeIdentityPoolUsageResponse'`
 
 ``` purescript
-newDescribeIdentityPoolUsageResponse' :: ({ "IdentityPoolUsage" :: NullOrUndefined (IdentityPoolUsage) } -> { "IdentityPoolUsage" :: NullOrUndefined (IdentityPoolUsage) }) -> DescribeIdentityPoolUsageResponse
+newDescribeIdentityPoolUsageResponse' :: ({ "IdentityPoolUsage" :: Maybe (IdentityPoolUsage) } -> { "IdentityPoolUsage" :: Maybe (IdentityPoolUsage) }) -> DescribeIdentityPoolUsageResponse
 ```
 
 Constructs DescribeIdentityPoolUsageResponse's fields from required parameters
@@ -596,7 +596,7 @@ Constructs DescribeIdentityUsageRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeIdentityUsageResponse
-  = DescribeIdentityUsageResponse { "IdentityUsage" :: NullOrUndefined (IdentityUsage) }
+  = DescribeIdentityUsageResponse { "IdentityUsage" :: Maybe (IdentityUsage) }
 ```
 
 The response to a successful DescribeIdentityUsage request.
@@ -621,7 +621,7 @@ Constructs DescribeIdentityUsageResponse from required parameters
 #### `newDescribeIdentityUsageResponse'`
 
 ``` purescript
-newDescribeIdentityUsageResponse' :: ({ "IdentityUsage" :: NullOrUndefined (IdentityUsage) } -> { "IdentityUsage" :: NullOrUndefined (IdentityUsage) }) -> DescribeIdentityUsageResponse
+newDescribeIdentityUsageResponse' :: ({ "IdentityUsage" :: Maybe (IdentityUsage) } -> { "IdentityUsage" :: Maybe (IdentityUsage) }) -> DescribeIdentityUsageResponse
 ```
 
 Constructs DescribeIdentityUsageResponse's fields from required parameters
@@ -746,7 +746,7 @@ Constructs GetBulkPublishDetailsRequest's fields from required parameters
 
 ``` purescript
 newtype GetBulkPublishDetailsResponse
-  = GetBulkPublishDetailsResponse { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "BulkPublishStartTime" :: NullOrUndefined (Date), "BulkPublishCompleteTime" :: NullOrUndefined (Date), "BulkPublishStatus" :: NullOrUndefined (BulkPublishStatus), "FailureMessage" :: NullOrUndefined (String) }
+  = GetBulkPublishDetailsResponse { "IdentityPoolId" :: Maybe (IdentityPoolId), "BulkPublishStartTime" :: Maybe (Date), "BulkPublishCompleteTime" :: Maybe (Date), "BulkPublishStatus" :: Maybe (BulkPublishStatus), "FailureMessage" :: Maybe (String) }
 ```
 
 The output for the GetBulkPublishDetails operation.
@@ -771,7 +771,7 @@ Constructs GetBulkPublishDetailsResponse from required parameters
 #### `newGetBulkPublishDetailsResponse'`
 
 ``` purescript
-newGetBulkPublishDetailsResponse' :: ({ "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "BulkPublishStartTime" :: NullOrUndefined (Date), "BulkPublishCompleteTime" :: NullOrUndefined (Date), "BulkPublishStatus" :: NullOrUndefined (BulkPublishStatus), "FailureMessage" :: NullOrUndefined (String) } -> { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "BulkPublishStartTime" :: NullOrUndefined (Date), "BulkPublishCompleteTime" :: NullOrUndefined (Date), "BulkPublishStatus" :: NullOrUndefined (BulkPublishStatus), "FailureMessage" :: NullOrUndefined (String) }) -> GetBulkPublishDetailsResponse
+newGetBulkPublishDetailsResponse' :: ({ "IdentityPoolId" :: Maybe (IdentityPoolId), "BulkPublishStartTime" :: Maybe (Date), "BulkPublishCompleteTime" :: Maybe (Date), "BulkPublishStatus" :: Maybe (BulkPublishStatus), "FailureMessage" :: Maybe (String) } -> { "IdentityPoolId" :: Maybe (IdentityPoolId), "BulkPublishStartTime" :: Maybe (Date), "BulkPublishCompleteTime" :: Maybe (Date), "BulkPublishStatus" :: Maybe (BulkPublishStatus), "FailureMessage" :: Maybe (String) }) -> GetBulkPublishDetailsResponse
 ```
 
 Constructs GetBulkPublishDetailsResponse's fields from required parameters
@@ -814,7 +814,7 @@ Constructs GetCognitoEventsRequest's fields from required parameters
 
 ``` purescript
 newtype GetCognitoEventsResponse
-  = GetCognitoEventsResponse { "Events" :: NullOrUndefined (Events) }
+  = GetCognitoEventsResponse { "Events" :: Maybe (Events) }
 ```
 
 <p>The response from the GetCognitoEvents request</p>
@@ -839,7 +839,7 @@ Constructs GetCognitoEventsResponse from required parameters
 #### `newGetCognitoEventsResponse'`
 
 ``` purescript
-newGetCognitoEventsResponse' :: ({ "Events" :: NullOrUndefined (Events) } -> { "Events" :: NullOrUndefined (Events) }) -> GetCognitoEventsResponse
+newGetCognitoEventsResponse' :: ({ "Events" :: Maybe (Events) } -> { "Events" :: Maybe (Events) }) -> GetCognitoEventsResponse
 ```
 
 Constructs GetCognitoEventsResponse's fields from required parameters
@@ -882,7 +882,7 @@ Constructs GetIdentityPoolConfigurationRequest's fields from required parameters
 
 ``` purescript
 newtype GetIdentityPoolConfigurationResponse
-  = GetIdentityPoolConfigurationResponse { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) }
+  = GetIdentityPoolConfigurationResponse { "IdentityPoolId" :: Maybe (IdentityPoolId), "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) }
 ```
 
 <p>The output for the GetIdentityPoolConfiguration operation.</p>
@@ -907,7 +907,7 @@ Constructs GetIdentityPoolConfigurationResponse from required parameters
 #### `newGetIdentityPoolConfigurationResponse'`
 
 ``` purescript
-newGetIdentityPoolConfigurationResponse' :: ({ "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) } -> { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) }) -> GetIdentityPoolConfigurationResponse
+newGetIdentityPoolConfigurationResponse' :: ({ "IdentityPoolId" :: Maybe (IdentityPoolId), "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) } -> { "IdentityPoolId" :: Maybe (IdentityPoolId), "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) }) -> GetIdentityPoolConfigurationResponse
 ```
 
 Constructs GetIdentityPoolConfigurationResponse's fields from required parameters
@@ -948,7 +948,7 @@ Encode IdentityPoolId
 
 ``` purescript
 newtype IdentityPoolUsage
-  = IdentityPoolUsage { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "SyncSessionsCount" :: NullOrUndefined (Number), "DataStorage" :: NullOrUndefined (Number), "LastModifiedDate" :: NullOrUndefined (Date) }
+  = IdentityPoolUsage { "IdentityPoolId" :: Maybe (IdentityPoolId), "SyncSessionsCount" :: Maybe (Number), "DataStorage" :: Maybe (Number), "LastModifiedDate" :: Maybe (Date) }
 ```
 
 Usage information for the identity pool.
@@ -973,7 +973,7 @@ Constructs IdentityPoolUsage from required parameters
 #### `newIdentityPoolUsage'`
 
 ``` purescript
-newIdentityPoolUsage' :: ({ "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "SyncSessionsCount" :: NullOrUndefined (Number), "DataStorage" :: NullOrUndefined (Number), "LastModifiedDate" :: NullOrUndefined (Date) } -> { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "SyncSessionsCount" :: NullOrUndefined (Number), "DataStorage" :: NullOrUndefined (Number), "LastModifiedDate" :: NullOrUndefined (Date) }) -> IdentityPoolUsage
+newIdentityPoolUsage' :: ({ "IdentityPoolId" :: Maybe (IdentityPoolId), "SyncSessionsCount" :: Maybe (Number), "DataStorage" :: Maybe (Number), "LastModifiedDate" :: Maybe (Date) } -> { "IdentityPoolId" :: Maybe (IdentityPoolId), "SyncSessionsCount" :: Maybe (Number), "DataStorage" :: Maybe (Number), "LastModifiedDate" :: Maybe (Date) }) -> IdentityPoolUsage
 ```
 
 Constructs IdentityPoolUsage's fields from required parameters
@@ -998,7 +998,7 @@ Encode IdentityPoolUsageList
 
 ``` purescript
 newtype IdentityUsage
-  = IdentityUsage { "IdentityId" :: NullOrUndefined (IdentityId), "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "LastModifiedDate" :: NullOrUndefined (Date), "DatasetCount" :: NullOrUndefined (Int), "DataStorage" :: NullOrUndefined (Number) }
+  = IdentityUsage { "IdentityId" :: Maybe (IdentityId), "IdentityPoolId" :: Maybe (IdentityPoolId), "LastModifiedDate" :: Maybe (Date), "DatasetCount" :: Maybe (Int), "DataStorage" :: Maybe (Number) }
 ```
 
 Usage information for the identity.
@@ -1023,7 +1023,7 @@ Constructs IdentityUsage from required parameters
 #### `newIdentityUsage'`
 
 ``` purescript
-newIdentityUsage' :: ({ "IdentityId" :: NullOrUndefined (IdentityId), "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "LastModifiedDate" :: NullOrUndefined (Date), "DatasetCount" :: NullOrUndefined (Int), "DataStorage" :: NullOrUndefined (Number) } -> { "IdentityId" :: NullOrUndefined (IdentityId), "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "LastModifiedDate" :: NullOrUndefined (Date), "DatasetCount" :: NullOrUndefined (Int), "DataStorage" :: NullOrUndefined (Number) }) -> IdentityUsage
+newIdentityUsage' :: ({ "IdentityId" :: Maybe (IdentityId), "IdentityPoolId" :: Maybe (IdentityPoolId), "LastModifiedDate" :: Maybe (Date), "DatasetCount" :: Maybe (Int), "DataStorage" :: Maybe (Number) } -> { "IdentityId" :: Maybe (IdentityId), "IdentityPoolId" :: Maybe (IdentityPoolId), "LastModifiedDate" :: Maybe (Date), "DatasetCount" :: Maybe (Int), "DataStorage" :: Maybe (Number) }) -> IdentityUsage
 ```
 
 Constructs IdentityUsage's fields from required parameters
@@ -1266,7 +1266,7 @@ Constructs LimitExceededException's fields from required parameters
 
 ``` purescript
 newtype ListDatasetsRequest
-  = ListDatasetsRequest { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString) }
+  = ListDatasetsRequest { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString) }
 ```
 
 Request for a list of datasets for an identity.
@@ -1291,7 +1291,7 @@ Constructs ListDatasetsRequest from required parameters
 #### `newListDatasetsRequest'`
 
 ``` purescript
-newListDatasetsRequest' :: IdentityId -> IdentityPoolId -> ({ "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString) } -> { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString) }) -> ListDatasetsRequest
+newListDatasetsRequest' :: IdentityId -> IdentityPoolId -> ({ "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString) } -> { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString) }) -> ListDatasetsRequest
 ```
 
 Constructs ListDatasetsRequest's fields from required parameters
@@ -1300,7 +1300,7 @@ Constructs ListDatasetsRequest's fields from required parameters
 
 ``` purescript
 newtype ListDatasetsResponse
-  = ListDatasetsResponse { "Datasets" :: NullOrUndefined (DatasetList), "Count" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }
+  = ListDatasetsResponse { "Datasets" :: Maybe (DatasetList), "Count" :: Maybe (Int), "NextToken" :: Maybe (String) }
 ```
 
 Returned for a successful ListDatasets request.
@@ -1325,7 +1325,7 @@ Constructs ListDatasetsResponse from required parameters
 #### `newListDatasetsResponse'`
 
 ``` purescript
-newListDatasetsResponse' :: ({ "Datasets" :: NullOrUndefined (DatasetList), "Count" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) } -> { "Datasets" :: NullOrUndefined (DatasetList), "Count" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }) -> ListDatasetsResponse
+newListDatasetsResponse' :: ({ "Datasets" :: Maybe (DatasetList), "Count" :: Maybe (Int), "NextToken" :: Maybe (String) } -> { "Datasets" :: Maybe (DatasetList), "Count" :: Maybe (Int), "NextToken" :: Maybe (String) }) -> ListDatasetsResponse
 ```
 
 Constructs ListDatasetsResponse's fields from required parameters
@@ -1334,7 +1334,7 @@ Constructs ListDatasetsResponse's fields from required parameters
 
 ``` purescript
 newtype ListIdentityPoolUsageRequest
-  = ListIdentityPoolUsageRequest { "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString) }
+  = ListIdentityPoolUsageRequest { "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString) }
 ```
 
 A request for usage information on an identity pool.
@@ -1359,7 +1359,7 @@ Constructs ListIdentityPoolUsageRequest from required parameters
 #### `newListIdentityPoolUsageRequest'`
 
 ``` purescript
-newListIdentityPoolUsageRequest' :: ({ "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString) } -> { "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString) }) -> ListIdentityPoolUsageRequest
+newListIdentityPoolUsageRequest' :: ({ "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString) } -> { "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString) }) -> ListIdentityPoolUsageRequest
 ```
 
 Constructs ListIdentityPoolUsageRequest's fields from required parameters
@@ -1368,7 +1368,7 @@ Constructs ListIdentityPoolUsageRequest's fields from required parameters
 
 ``` purescript
 newtype ListIdentityPoolUsageResponse
-  = ListIdentityPoolUsageResponse { "IdentityPoolUsages" :: NullOrUndefined (IdentityPoolUsageList), "MaxResults" :: NullOrUndefined (Int), "Count" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }
+  = ListIdentityPoolUsageResponse { "IdentityPoolUsages" :: Maybe (IdentityPoolUsageList), "MaxResults" :: Maybe (Int), "Count" :: Maybe (Int), "NextToken" :: Maybe (String) }
 ```
 
 Returned for a successful ListIdentityPoolUsage request.
@@ -1393,7 +1393,7 @@ Constructs ListIdentityPoolUsageResponse from required parameters
 #### `newListIdentityPoolUsageResponse'`
 
 ``` purescript
-newListIdentityPoolUsageResponse' :: ({ "IdentityPoolUsages" :: NullOrUndefined (IdentityPoolUsageList), "MaxResults" :: NullOrUndefined (Int), "Count" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) } -> { "IdentityPoolUsages" :: NullOrUndefined (IdentityPoolUsageList), "MaxResults" :: NullOrUndefined (Int), "Count" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }) -> ListIdentityPoolUsageResponse
+newListIdentityPoolUsageResponse' :: ({ "IdentityPoolUsages" :: Maybe (IdentityPoolUsageList), "MaxResults" :: Maybe (Int), "Count" :: Maybe (Int), "NextToken" :: Maybe (String) } -> { "IdentityPoolUsages" :: Maybe (IdentityPoolUsageList), "MaxResults" :: Maybe (Int), "Count" :: Maybe (Int), "NextToken" :: Maybe (String) }) -> ListIdentityPoolUsageResponse
 ```
 
 Constructs ListIdentityPoolUsageResponse's fields from required parameters
@@ -1402,7 +1402,7 @@ Constructs ListIdentityPoolUsageResponse's fields from required parameters
 
 ``` purescript
 newtype ListRecordsRequest
-  = ListRecordsRequest { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "LastSyncCount" :: NullOrUndefined (Number), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString), "SyncSessionToken" :: NullOrUndefined (SyncSessionToken) }
+  = ListRecordsRequest { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "LastSyncCount" :: Maybe (Number), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString), "SyncSessionToken" :: Maybe (SyncSessionToken) }
 ```
 
 A request for a list of records.
@@ -1427,7 +1427,7 @@ Constructs ListRecordsRequest from required parameters
 #### `newListRecordsRequest'`
 
 ``` purescript
-newListRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> ({ "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "LastSyncCount" :: NullOrUndefined (Number), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString), "SyncSessionToken" :: NullOrUndefined (SyncSessionToken) } -> { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "LastSyncCount" :: NullOrUndefined (Number), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerString), "SyncSessionToken" :: NullOrUndefined (SyncSessionToken) }) -> ListRecordsRequest
+newListRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> ({ "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "LastSyncCount" :: Maybe (Number), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString), "SyncSessionToken" :: Maybe (SyncSessionToken) } -> { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "LastSyncCount" :: Maybe (Number), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (IntegerString), "SyncSessionToken" :: Maybe (SyncSessionToken) }) -> ListRecordsRequest
 ```
 
 Constructs ListRecordsRequest's fields from required parameters
@@ -1436,7 +1436,7 @@ Constructs ListRecordsRequest's fields from required parameters
 
 ``` purescript
 newtype ListRecordsResponse
-  = ListRecordsResponse { "Records" :: NullOrUndefined (RecordList), "NextToken" :: NullOrUndefined (String), "Count" :: NullOrUndefined (Int), "DatasetSyncCount" :: NullOrUndefined (Number), "LastModifiedBy" :: NullOrUndefined (String), "MergedDatasetNames" :: NullOrUndefined (MergedDatasetNameList), "DatasetExists" :: NullOrUndefined (Boolean), "DatasetDeletedAfterRequestedSyncCount" :: NullOrUndefined (Boolean), "SyncSessionToken" :: NullOrUndefined (String) }
+  = ListRecordsResponse { "Records" :: Maybe (RecordList), "NextToken" :: Maybe (String), "Count" :: Maybe (Int), "DatasetSyncCount" :: Maybe (Number), "LastModifiedBy" :: Maybe (String), "MergedDatasetNames" :: Maybe (MergedDatasetNameList), "DatasetExists" :: Maybe (Boolean), "DatasetDeletedAfterRequestedSyncCount" :: Maybe (Boolean), "SyncSessionToken" :: Maybe (String) }
 ```
 
 Returned for a successful ListRecordsRequest.
@@ -1461,7 +1461,7 @@ Constructs ListRecordsResponse from required parameters
 #### `newListRecordsResponse'`
 
 ``` purescript
-newListRecordsResponse' :: ({ "Records" :: NullOrUndefined (RecordList), "NextToken" :: NullOrUndefined (String), "Count" :: NullOrUndefined (Int), "DatasetSyncCount" :: NullOrUndefined (Number), "LastModifiedBy" :: NullOrUndefined (String), "MergedDatasetNames" :: NullOrUndefined (MergedDatasetNameList), "DatasetExists" :: NullOrUndefined (Boolean), "DatasetDeletedAfterRequestedSyncCount" :: NullOrUndefined (Boolean), "SyncSessionToken" :: NullOrUndefined (String) } -> { "Records" :: NullOrUndefined (RecordList), "NextToken" :: NullOrUndefined (String), "Count" :: NullOrUndefined (Int), "DatasetSyncCount" :: NullOrUndefined (Number), "LastModifiedBy" :: NullOrUndefined (String), "MergedDatasetNames" :: NullOrUndefined (MergedDatasetNameList), "DatasetExists" :: NullOrUndefined (Boolean), "DatasetDeletedAfterRequestedSyncCount" :: NullOrUndefined (Boolean), "SyncSessionToken" :: NullOrUndefined (String) }) -> ListRecordsResponse
+newListRecordsResponse' :: ({ "Records" :: Maybe (RecordList), "NextToken" :: Maybe (String), "Count" :: Maybe (Int), "DatasetSyncCount" :: Maybe (Number), "LastModifiedBy" :: Maybe (String), "MergedDatasetNames" :: Maybe (MergedDatasetNameList), "DatasetExists" :: Maybe (Boolean), "DatasetDeletedAfterRequestedSyncCount" :: Maybe (Boolean), "SyncSessionToken" :: Maybe (String) } -> { "Records" :: Maybe (RecordList), "NextToken" :: Maybe (String), "Count" :: Maybe (Int), "DatasetSyncCount" :: Maybe (Number), "LastModifiedBy" :: Maybe (String), "MergedDatasetNames" :: Maybe (MergedDatasetNameList), "DatasetExists" :: Maybe (Boolean), "DatasetDeletedAfterRequestedSyncCount" :: Maybe (Boolean), "SyncSessionToken" :: Maybe (String) }) -> ListRecordsResponse
 ```
 
 Constructs ListRecordsResponse's fields from required parameters
@@ -1552,7 +1552,7 @@ Encode Platform
 
 ``` purescript
 newtype PushSync
-  = PushSync { "ApplicationArns" :: NullOrUndefined (ApplicationArnList), "RoleArn" :: NullOrUndefined (AssumeRoleArn) }
+  = PushSync { "ApplicationArns" :: Maybe (ApplicationArnList), "RoleArn" :: Maybe (AssumeRoleArn) }
 ```
 
 <p>Configuration options to be applied to the identity pool.</p>
@@ -1577,7 +1577,7 @@ Constructs PushSync from required parameters
 #### `newPushSync'`
 
 ``` purescript
-newPushSync' :: ({ "ApplicationArns" :: NullOrUndefined (ApplicationArnList), "RoleArn" :: NullOrUndefined (AssumeRoleArn) } -> { "ApplicationArns" :: NullOrUndefined (ApplicationArnList), "RoleArn" :: NullOrUndefined (AssumeRoleArn) }) -> PushSync
+newPushSync' :: ({ "ApplicationArns" :: Maybe (ApplicationArnList), "RoleArn" :: Maybe (AssumeRoleArn) } -> { "ApplicationArns" :: Maybe (ApplicationArnList), "RoleArn" :: Maybe (AssumeRoleArn) }) -> PushSync
 ```
 
 Constructs PushSync's fields from required parameters
@@ -1602,7 +1602,7 @@ Encode PushToken
 
 ``` purescript
 newtype Record''
-  = Record'' { "Key" :: NullOrUndefined (RecordKey), "Value" :: NullOrUndefined (RecordValue), "SyncCount" :: NullOrUndefined (Number), "LastModifiedDate" :: NullOrUndefined (Date), "LastModifiedBy" :: NullOrUndefined (String), "DeviceLastModifiedDate" :: NullOrUndefined (Date) }
+  = Record'' { "Key" :: Maybe (RecordKey), "Value" :: Maybe (RecordValue), "SyncCount" :: Maybe (Number), "LastModifiedDate" :: Maybe (Date), "LastModifiedBy" :: Maybe (String), "DeviceLastModifiedDate" :: Maybe (Date) }
 ```
 
 The basic data structure of a dataset.
@@ -1627,7 +1627,7 @@ Constructs Record'' from required parameters
 #### `newRecord'''`
 
 ``` purescript
-newRecord''' :: ({ "Key" :: NullOrUndefined (RecordKey), "Value" :: NullOrUndefined (RecordValue), "SyncCount" :: NullOrUndefined (Number), "LastModifiedDate" :: NullOrUndefined (Date), "LastModifiedBy" :: NullOrUndefined (String), "DeviceLastModifiedDate" :: NullOrUndefined (Date) } -> { "Key" :: NullOrUndefined (RecordKey), "Value" :: NullOrUndefined (RecordValue), "SyncCount" :: NullOrUndefined (Number), "LastModifiedDate" :: NullOrUndefined (Date), "LastModifiedBy" :: NullOrUndefined (String), "DeviceLastModifiedDate" :: NullOrUndefined (Date) }) -> Record''
+newRecord''' :: ({ "Key" :: Maybe (RecordKey), "Value" :: Maybe (RecordValue), "SyncCount" :: Maybe (Number), "LastModifiedDate" :: Maybe (Date), "LastModifiedBy" :: Maybe (String), "DeviceLastModifiedDate" :: Maybe (Date) } -> { "Key" :: Maybe (RecordKey), "Value" :: Maybe (RecordValue), "SyncCount" :: Maybe (Number), "LastModifiedDate" :: Maybe (Date), "LastModifiedBy" :: Maybe (String), "DeviceLastModifiedDate" :: Maybe (Date) }) -> Record''
 ```
 
 Constructs Record'''s fields from required parameters
@@ -1668,7 +1668,7 @@ Encode RecordList
 
 ``` purescript
 newtype RecordPatch
-  = RecordPatch { "Op" :: Operation, "Key" :: RecordKey, "Value" :: NullOrUndefined (RecordValue), "SyncCount" :: Number, "DeviceLastModifiedDate" :: NullOrUndefined (Date) }
+  = RecordPatch { "Op" :: Operation, "Key" :: RecordKey, "Value" :: Maybe (RecordValue), "SyncCount" :: Number, "DeviceLastModifiedDate" :: Maybe (Date) }
 ```
 
 An update operation for a record.
@@ -1693,7 +1693,7 @@ Constructs RecordPatch from required parameters
 #### `newRecordPatch'`
 
 ``` purescript
-newRecordPatch' :: RecordKey -> Operation -> Number -> ({ "Op" :: Operation, "Key" :: RecordKey, "Value" :: NullOrUndefined (RecordValue), "SyncCount" :: Number, "DeviceLastModifiedDate" :: NullOrUndefined (Date) } -> { "Op" :: Operation, "Key" :: RecordKey, "Value" :: NullOrUndefined (RecordValue), "SyncCount" :: Number, "DeviceLastModifiedDate" :: NullOrUndefined (Date) }) -> RecordPatch
+newRecordPatch' :: RecordKey -> Operation -> Number -> ({ "Op" :: Operation, "Key" :: RecordKey, "Value" :: Maybe (RecordValue), "SyncCount" :: Number, "DeviceLastModifiedDate" :: Maybe (Date) } -> { "Op" :: Operation, "Key" :: RecordKey, "Value" :: Maybe (RecordValue), "SyncCount" :: Number, "DeviceLastModifiedDate" :: Maybe (Date) }) -> RecordPatch
 ```
 
 Constructs RecordPatch's fields from required parameters
@@ -1768,7 +1768,7 @@ Constructs RegisterDeviceRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterDeviceResponse
-  = RegisterDeviceResponse { "DeviceId" :: NullOrUndefined (DeviceId) }
+  = RegisterDeviceResponse { "DeviceId" :: Maybe (DeviceId) }
 ```
 
 <p>Response to a RegisterDevice request.</p>
@@ -1793,7 +1793,7 @@ Constructs RegisterDeviceResponse from required parameters
 #### `newRegisterDeviceResponse'`
 
 ``` purescript
-newRegisterDeviceResponse' :: ({ "DeviceId" :: NullOrUndefined (DeviceId) } -> { "DeviceId" :: NullOrUndefined (DeviceId) }) -> RegisterDeviceResponse
+newRegisterDeviceResponse' :: ({ "DeviceId" :: Maybe (DeviceId) } -> { "DeviceId" :: Maybe (DeviceId) }) -> RegisterDeviceResponse
 ```
 
 Constructs RegisterDeviceResponse's fields from required parameters
@@ -1904,7 +1904,7 @@ Constructs SetCognitoEventsRequest's fields from required parameters
 
 ``` purescript
 newtype SetIdentityPoolConfigurationRequest
-  = SetIdentityPoolConfigurationRequest { "IdentityPoolId" :: IdentityPoolId, "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) }
+  = SetIdentityPoolConfigurationRequest { "IdentityPoolId" :: IdentityPoolId, "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) }
 ```
 
 <p>The input for the SetIdentityPoolConfiguration operation.</p>
@@ -1929,7 +1929,7 @@ Constructs SetIdentityPoolConfigurationRequest from required parameters
 #### `newSetIdentityPoolConfigurationRequest'`
 
 ``` purescript
-newSetIdentityPoolConfigurationRequest' :: IdentityPoolId -> ({ "IdentityPoolId" :: IdentityPoolId, "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) } -> { "IdentityPoolId" :: IdentityPoolId, "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) }) -> SetIdentityPoolConfigurationRequest
+newSetIdentityPoolConfigurationRequest' :: IdentityPoolId -> ({ "IdentityPoolId" :: IdentityPoolId, "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) } -> { "IdentityPoolId" :: IdentityPoolId, "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) }) -> SetIdentityPoolConfigurationRequest
 ```
 
 Constructs SetIdentityPoolConfigurationRequest's fields from required parameters
@@ -1938,7 +1938,7 @@ Constructs SetIdentityPoolConfigurationRequest's fields from required parameters
 
 ``` purescript
 newtype SetIdentityPoolConfigurationResponse
-  = SetIdentityPoolConfigurationResponse { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) }
+  = SetIdentityPoolConfigurationResponse { "IdentityPoolId" :: Maybe (IdentityPoolId), "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) }
 ```
 
 <p>The output for the SetIdentityPoolConfiguration operation</p>
@@ -1963,7 +1963,7 @@ Constructs SetIdentityPoolConfigurationResponse from required parameters
 #### `newSetIdentityPoolConfigurationResponse'`
 
 ``` purescript
-newSetIdentityPoolConfigurationResponse' :: ({ "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) } -> { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId), "PushSync" :: NullOrUndefined (PushSync), "CognitoStreams" :: NullOrUndefined (CognitoStreams) }) -> SetIdentityPoolConfigurationResponse
+newSetIdentityPoolConfigurationResponse' :: ({ "IdentityPoolId" :: Maybe (IdentityPoolId), "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) } -> { "IdentityPoolId" :: Maybe (IdentityPoolId), "PushSync" :: Maybe (PushSync), "CognitoStreams" :: Maybe (CognitoStreams) }) -> SetIdentityPoolConfigurationResponse
 ```
 
 Constructs SetIdentityPoolConfigurationResponse's fields from required parameters
@@ -2158,7 +2158,7 @@ Encode UnsubscribeFromDatasetResponse
 
 ``` purescript
 newtype UpdateRecordsRequest
-  = UpdateRecordsRequest { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "DeviceId" :: NullOrUndefined (DeviceId), "RecordPatches" :: NullOrUndefined (RecordPatchList), "SyncSessionToken" :: SyncSessionToken, "ClientContext" :: NullOrUndefined (ClientContext) }
+  = UpdateRecordsRequest { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "DeviceId" :: Maybe (DeviceId), "RecordPatches" :: Maybe (RecordPatchList), "SyncSessionToken" :: SyncSessionToken, "ClientContext" :: Maybe (ClientContext) }
 ```
 
 A request to post updates to records or add and delete records for a dataset and user.
@@ -2183,7 +2183,7 @@ Constructs UpdateRecordsRequest from required parameters
 #### `newUpdateRecordsRequest'`
 
 ``` purescript
-newUpdateRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> SyncSessionToken -> ({ "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "DeviceId" :: NullOrUndefined (DeviceId), "RecordPatches" :: NullOrUndefined (RecordPatchList), "SyncSessionToken" :: SyncSessionToken, "ClientContext" :: NullOrUndefined (ClientContext) } -> { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "DeviceId" :: NullOrUndefined (DeviceId), "RecordPatches" :: NullOrUndefined (RecordPatchList), "SyncSessionToken" :: SyncSessionToken, "ClientContext" :: NullOrUndefined (ClientContext) }) -> UpdateRecordsRequest
+newUpdateRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> SyncSessionToken -> ({ "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "DeviceId" :: Maybe (DeviceId), "RecordPatches" :: Maybe (RecordPatchList), "SyncSessionToken" :: SyncSessionToken, "ClientContext" :: Maybe (ClientContext) } -> { "IdentityPoolId" :: IdentityPoolId, "IdentityId" :: IdentityId, "DatasetName" :: DatasetName, "DeviceId" :: Maybe (DeviceId), "RecordPatches" :: Maybe (RecordPatchList), "SyncSessionToken" :: SyncSessionToken, "ClientContext" :: Maybe (ClientContext) }) -> UpdateRecordsRequest
 ```
 
 Constructs UpdateRecordsRequest's fields from required parameters
@@ -2192,7 +2192,7 @@ Constructs UpdateRecordsRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateRecordsResponse
-  = UpdateRecordsResponse { "Records" :: NullOrUndefined (RecordList) }
+  = UpdateRecordsResponse { "Records" :: Maybe (RecordList) }
 ```
 
 Returned for a successful UpdateRecordsRequest.
@@ -2217,7 +2217,7 @@ Constructs UpdateRecordsResponse from required parameters
 #### `newUpdateRecordsResponse'`
 
 ``` purescript
-newUpdateRecordsResponse' :: ({ "Records" :: NullOrUndefined (RecordList) } -> { "Records" :: NullOrUndefined (RecordList) }) -> UpdateRecordsResponse
+newUpdateRecordsResponse' :: ({ "Records" :: Maybe (RecordList) } -> { "Records" :: Maybe (RecordList) }) -> UpdateRecordsResponse
 ```
 
 Constructs UpdateRecordsResponse's fields from required parameters

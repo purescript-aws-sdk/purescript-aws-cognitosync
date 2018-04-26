@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -89,7 +88,7 @@ newBulkPublishRequest' _IdentityPoolId customize = (BulkPublishRequest <<< custo
 
 -- | The output for the BulkPublish operation.
 newtype BulkPublishResponse = BulkPublishResponse 
-  { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId)
+  { "IdentityPoolId" :: Maybe (IdentityPoolId)
   }
 derive instance newtypeBulkPublishResponse :: Newtype BulkPublishResponse _
 derive instance repGenericBulkPublishResponse :: Generic BulkPublishResponse _
@@ -99,12 +98,12 @@ instance encodeBulkPublishResponse :: Encode BulkPublishResponse where encode = 
 
 -- | Constructs BulkPublishResponse from required parameters
 newBulkPublishResponse :: BulkPublishResponse
-newBulkPublishResponse  = BulkPublishResponse { "IdentityPoolId": (NullOrUndefined Nothing) }
+newBulkPublishResponse  = BulkPublishResponse { "IdentityPoolId": Nothing }
 
 -- | Constructs BulkPublishResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBulkPublishResponse' :: ( { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) } -> {"IdentityPoolId" :: NullOrUndefined (IdentityPoolId) } ) -> BulkPublishResponse
-newBulkPublishResponse'  customize = (BulkPublishResponse <<< customize) { "IdentityPoolId": (NullOrUndefined Nothing) }
+newBulkPublishResponse' :: ( { "IdentityPoolId" :: Maybe (IdentityPoolId) } -> {"IdentityPoolId" :: Maybe (IdentityPoolId) } ) -> BulkPublishResponse
+newBulkPublishResponse'  customize = (BulkPublishResponse <<< customize) { "IdentityPoolId": Nothing }
 
 
 
@@ -137,9 +136,9 @@ instance encodeCognitoEventType :: Encode CognitoEventType where encode = generi
 
 -- | Configuration options for configure Cognito streams.
 newtype CognitoStreams = CognitoStreams 
-  { "StreamName" :: NullOrUndefined (StreamName)
-  , "RoleArn" :: NullOrUndefined (AssumeRoleArn)
-  , "StreamingStatus" :: NullOrUndefined (StreamingStatus)
+  { "StreamName" :: Maybe (StreamName)
+  , "RoleArn" :: Maybe (AssumeRoleArn)
+  , "StreamingStatus" :: Maybe (StreamingStatus)
   }
 derive instance newtypeCognitoStreams :: Newtype CognitoStreams _
 derive instance repGenericCognitoStreams :: Generic CognitoStreams _
@@ -149,12 +148,12 @@ instance encodeCognitoStreams :: Encode CognitoStreams where encode = genericEnc
 
 -- | Constructs CognitoStreams from required parameters
 newCognitoStreams :: CognitoStreams
-newCognitoStreams  = CognitoStreams { "RoleArn": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing), "StreamingStatus": (NullOrUndefined Nothing) }
+newCognitoStreams  = CognitoStreams { "RoleArn": Nothing, "StreamName": Nothing, "StreamingStatus": Nothing }
 
 -- | Constructs CognitoStreams's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCognitoStreams' :: ( { "StreamName" :: NullOrUndefined (StreamName) , "RoleArn" :: NullOrUndefined (AssumeRoleArn) , "StreamingStatus" :: NullOrUndefined (StreamingStatus) } -> {"StreamName" :: NullOrUndefined (StreamName) , "RoleArn" :: NullOrUndefined (AssumeRoleArn) , "StreamingStatus" :: NullOrUndefined (StreamingStatus) } ) -> CognitoStreams
-newCognitoStreams'  customize = (CognitoStreams <<< customize) { "RoleArn": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing), "StreamingStatus": (NullOrUndefined Nothing) }
+newCognitoStreams' :: ( { "StreamName" :: Maybe (StreamName) , "RoleArn" :: Maybe (AssumeRoleArn) , "StreamingStatus" :: Maybe (StreamingStatus) } -> {"StreamName" :: Maybe (StreamName) , "RoleArn" :: Maybe (AssumeRoleArn) , "StreamingStatus" :: Maybe (StreamingStatus) } ) -> CognitoStreams
+newCognitoStreams'  customize = (CognitoStreams <<< customize) { "RoleArn": Nothing, "StreamName": Nothing, "StreamingStatus": Nothing }
 
 
 
@@ -181,13 +180,13 @@ newConcurrentModificationException' _message customize = (ConcurrentModification
 
 -- | A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 newtype Dataset = Dataset 
-  { "IdentityId" :: NullOrUndefined (IdentityId)
-  , "DatasetName" :: NullOrUndefined (DatasetName)
-  , "CreationDate" :: NullOrUndefined (Date)
-  , "LastModifiedDate" :: NullOrUndefined (Date)
-  , "LastModifiedBy" :: NullOrUndefined (String)
-  , "DataStorage" :: NullOrUndefined (Number)
-  , "NumRecords" :: NullOrUndefined (Number)
+  { "IdentityId" :: Maybe (IdentityId)
+  , "DatasetName" :: Maybe (DatasetName)
+  , "CreationDate" :: Maybe (Date)
+  , "LastModifiedDate" :: Maybe (Date)
+  , "LastModifiedBy" :: Maybe (String)
+  , "DataStorage" :: Maybe (Number)
+  , "NumRecords" :: Maybe (Number)
   }
 derive instance newtypeDataset :: Newtype Dataset _
 derive instance repGenericDataset :: Generic Dataset _
@@ -197,12 +196,12 @@ instance encodeDataset :: Encode Dataset where encode = genericEncode options
 
 -- | Constructs Dataset from required parameters
 newDataset :: Dataset
-newDataset  = Dataset { "CreationDate": (NullOrUndefined Nothing), "DataStorage": (NullOrUndefined Nothing), "DatasetName": (NullOrUndefined Nothing), "IdentityId": (NullOrUndefined Nothing), "LastModifiedBy": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "NumRecords": (NullOrUndefined Nothing) }
+newDataset  = Dataset { "CreationDate": Nothing, "DataStorage": Nothing, "DatasetName": Nothing, "IdentityId": Nothing, "LastModifiedBy": Nothing, "LastModifiedDate": Nothing, "NumRecords": Nothing }
 
 -- | Constructs Dataset's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDataset' :: ( { "IdentityId" :: NullOrUndefined (IdentityId) , "DatasetName" :: NullOrUndefined (DatasetName) , "CreationDate" :: NullOrUndefined (Date) , "LastModifiedDate" :: NullOrUndefined (Date) , "LastModifiedBy" :: NullOrUndefined (String) , "DataStorage" :: NullOrUndefined (Number) , "NumRecords" :: NullOrUndefined (Number) } -> {"IdentityId" :: NullOrUndefined (IdentityId) , "DatasetName" :: NullOrUndefined (DatasetName) , "CreationDate" :: NullOrUndefined (Date) , "LastModifiedDate" :: NullOrUndefined (Date) , "LastModifiedBy" :: NullOrUndefined (String) , "DataStorage" :: NullOrUndefined (Number) , "NumRecords" :: NullOrUndefined (Number) } ) -> Dataset
-newDataset'  customize = (Dataset <<< customize) { "CreationDate": (NullOrUndefined Nothing), "DataStorage": (NullOrUndefined Nothing), "DatasetName": (NullOrUndefined Nothing), "IdentityId": (NullOrUndefined Nothing), "LastModifiedBy": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "NumRecords": (NullOrUndefined Nothing) }
+newDataset' :: ( { "IdentityId" :: Maybe (IdentityId) , "DatasetName" :: Maybe (DatasetName) , "CreationDate" :: Maybe (Date) , "LastModifiedDate" :: Maybe (Date) , "LastModifiedBy" :: Maybe (String) , "DataStorage" :: Maybe (Number) , "NumRecords" :: Maybe (Number) } -> {"IdentityId" :: Maybe (IdentityId) , "DatasetName" :: Maybe (DatasetName) , "CreationDate" :: Maybe (Date) , "LastModifiedDate" :: Maybe (Date) , "LastModifiedBy" :: Maybe (String) , "DataStorage" :: Maybe (Number) , "NumRecords" :: Maybe (Number) } ) -> Dataset
+newDataset'  customize = (Dataset <<< customize) { "CreationDate": Nothing, "DataStorage": Nothing, "DatasetName": Nothing, "IdentityId": Nothing, "LastModifiedBy": Nothing, "LastModifiedDate": Nothing, "NumRecords": Nothing }
 
 
 
@@ -258,7 +257,7 @@ newDeleteDatasetRequest' _DatasetName _IdentityId _IdentityPoolId customize = (D
 
 -- | Response to a successful DeleteDataset request.
 newtype DeleteDatasetResponse = DeleteDatasetResponse 
-  { "Dataset" :: NullOrUndefined (Dataset)
+  { "Dataset" :: Maybe (Dataset)
   }
 derive instance newtypeDeleteDatasetResponse :: Newtype DeleteDatasetResponse _
 derive instance repGenericDeleteDatasetResponse :: Generic DeleteDatasetResponse _
@@ -268,12 +267,12 @@ instance encodeDeleteDatasetResponse :: Encode DeleteDatasetResponse where encod
 
 -- | Constructs DeleteDatasetResponse from required parameters
 newDeleteDatasetResponse :: DeleteDatasetResponse
-newDeleteDatasetResponse  = DeleteDatasetResponse { "Dataset": (NullOrUndefined Nothing) }
+newDeleteDatasetResponse  = DeleteDatasetResponse { "Dataset": Nothing }
 
 -- | Constructs DeleteDatasetResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteDatasetResponse' :: ( { "Dataset" :: NullOrUndefined (Dataset) } -> {"Dataset" :: NullOrUndefined (Dataset) } ) -> DeleteDatasetResponse
-newDeleteDatasetResponse'  customize = (DeleteDatasetResponse <<< customize) { "Dataset": (NullOrUndefined Nothing) }
+newDeleteDatasetResponse' :: ( { "Dataset" :: Maybe (Dataset) } -> {"Dataset" :: Maybe (Dataset) } ) -> DeleteDatasetResponse
+newDeleteDatasetResponse'  customize = (DeleteDatasetResponse <<< customize) { "Dataset": Nothing }
 
 
 
@@ -302,7 +301,7 @@ newDescribeDatasetRequest' _DatasetName _IdentityId _IdentityPoolId customize = 
 
 -- | Response to a successful DescribeDataset request.
 newtype DescribeDatasetResponse = DescribeDatasetResponse 
-  { "Dataset" :: NullOrUndefined (Dataset)
+  { "Dataset" :: Maybe (Dataset)
   }
 derive instance newtypeDescribeDatasetResponse :: Newtype DescribeDatasetResponse _
 derive instance repGenericDescribeDatasetResponse :: Generic DescribeDatasetResponse _
@@ -312,12 +311,12 @@ instance encodeDescribeDatasetResponse :: Encode DescribeDatasetResponse where e
 
 -- | Constructs DescribeDatasetResponse from required parameters
 newDescribeDatasetResponse :: DescribeDatasetResponse
-newDescribeDatasetResponse  = DescribeDatasetResponse { "Dataset": (NullOrUndefined Nothing) }
+newDescribeDatasetResponse  = DescribeDatasetResponse { "Dataset": Nothing }
 
 -- | Constructs DescribeDatasetResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDatasetResponse' :: ( { "Dataset" :: NullOrUndefined (Dataset) } -> {"Dataset" :: NullOrUndefined (Dataset) } ) -> DescribeDatasetResponse
-newDescribeDatasetResponse'  customize = (DescribeDatasetResponse <<< customize) { "Dataset": (NullOrUndefined Nothing) }
+newDescribeDatasetResponse' :: ( { "Dataset" :: Maybe (Dataset) } -> {"Dataset" :: Maybe (Dataset) } ) -> DescribeDatasetResponse
+newDescribeDatasetResponse'  customize = (DescribeDatasetResponse <<< customize) { "Dataset": Nothing }
 
 
 
@@ -344,7 +343,7 @@ newDescribeIdentityPoolUsageRequest' _IdentityPoolId customize = (DescribeIdenti
 
 -- | Response to a successful DescribeIdentityPoolUsage request.
 newtype DescribeIdentityPoolUsageResponse = DescribeIdentityPoolUsageResponse 
-  { "IdentityPoolUsage" :: NullOrUndefined (IdentityPoolUsage)
+  { "IdentityPoolUsage" :: Maybe (IdentityPoolUsage)
   }
 derive instance newtypeDescribeIdentityPoolUsageResponse :: Newtype DescribeIdentityPoolUsageResponse _
 derive instance repGenericDescribeIdentityPoolUsageResponse :: Generic DescribeIdentityPoolUsageResponse _
@@ -354,12 +353,12 @@ instance encodeDescribeIdentityPoolUsageResponse :: Encode DescribeIdentityPoolU
 
 -- | Constructs DescribeIdentityPoolUsageResponse from required parameters
 newDescribeIdentityPoolUsageResponse :: DescribeIdentityPoolUsageResponse
-newDescribeIdentityPoolUsageResponse  = DescribeIdentityPoolUsageResponse { "IdentityPoolUsage": (NullOrUndefined Nothing) }
+newDescribeIdentityPoolUsageResponse  = DescribeIdentityPoolUsageResponse { "IdentityPoolUsage": Nothing }
 
 -- | Constructs DescribeIdentityPoolUsageResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeIdentityPoolUsageResponse' :: ( { "IdentityPoolUsage" :: NullOrUndefined (IdentityPoolUsage) } -> {"IdentityPoolUsage" :: NullOrUndefined (IdentityPoolUsage) } ) -> DescribeIdentityPoolUsageResponse
-newDescribeIdentityPoolUsageResponse'  customize = (DescribeIdentityPoolUsageResponse <<< customize) { "IdentityPoolUsage": (NullOrUndefined Nothing) }
+newDescribeIdentityPoolUsageResponse' :: ( { "IdentityPoolUsage" :: Maybe (IdentityPoolUsage) } -> {"IdentityPoolUsage" :: Maybe (IdentityPoolUsage) } ) -> DescribeIdentityPoolUsageResponse
+newDescribeIdentityPoolUsageResponse'  customize = (DescribeIdentityPoolUsageResponse <<< customize) { "IdentityPoolUsage": Nothing }
 
 
 
@@ -387,7 +386,7 @@ newDescribeIdentityUsageRequest' _IdentityId _IdentityPoolId customize = (Descri
 
 -- | The response to a successful DescribeIdentityUsage request.
 newtype DescribeIdentityUsageResponse = DescribeIdentityUsageResponse 
-  { "IdentityUsage" :: NullOrUndefined (IdentityUsage)
+  { "IdentityUsage" :: Maybe (IdentityUsage)
   }
 derive instance newtypeDescribeIdentityUsageResponse :: Newtype DescribeIdentityUsageResponse _
 derive instance repGenericDescribeIdentityUsageResponse :: Generic DescribeIdentityUsageResponse _
@@ -397,12 +396,12 @@ instance encodeDescribeIdentityUsageResponse :: Encode DescribeIdentityUsageResp
 
 -- | Constructs DescribeIdentityUsageResponse from required parameters
 newDescribeIdentityUsageResponse :: DescribeIdentityUsageResponse
-newDescribeIdentityUsageResponse  = DescribeIdentityUsageResponse { "IdentityUsage": (NullOrUndefined Nothing) }
+newDescribeIdentityUsageResponse  = DescribeIdentityUsageResponse { "IdentityUsage": Nothing }
 
 -- | Constructs DescribeIdentityUsageResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeIdentityUsageResponse' :: ( { "IdentityUsage" :: NullOrUndefined (IdentityUsage) } -> {"IdentityUsage" :: NullOrUndefined (IdentityUsage) } ) -> DescribeIdentityUsageResponse
-newDescribeIdentityUsageResponse'  customize = (DescribeIdentityUsageResponse <<< customize) { "IdentityUsage": (NullOrUndefined Nothing) }
+newDescribeIdentityUsageResponse' :: ( { "IdentityUsage" :: Maybe (IdentityUsage) } -> {"IdentityUsage" :: Maybe (IdentityUsage) } ) -> DescribeIdentityUsageResponse
+newDescribeIdentityUsageResponse'  customize = (DescribeIdentityUsageResponse <<< customize) { "IdentityUsage": Nothing }
 
 
 
@@ -477,11 +476,11 @@ newGetBulkPublishDetailsRequest' _IdentityPoolId customize = (GetBulkPublishDeta
 
 -- | The output for the GetBulkPublishDetails operation.
 newtype GetBulkPublishDetailsResponse = GetBulkPublishDetailsResponse 
-  { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId)
-  , "BulkPublishStartTime" :: NullOrUndefined (Date)
-  , "BulkPublishCompleteTime" :: NullOrUndefined (Date)
-  , "BulkPublishStatus" :: NullOrUndefined (BulkPublishStatus)
-  , "FailureMessage" :: NullOrUndefined (String)
+  { "IdentityPoolId" :: Maybe (IdentityPoolId)
+  , "BulkPublishStartTime" :: Maybe (Date)
+  , "BulkPublishCompleteTime" :: Maybe (Date)
+  , "BulkPublishStatus" :: Maybe (BulkPublishStatus)
+  , "FailureMessage" :: Maybe (String)
   }
 derive instance newtypeGetBulkPublishDetailsResponse :: Newtype GetBulkPublishDetailsResponse _
 derive instance repGenericGetBulkPublishDetailsResponse :: Generic GetBulkPublishDetailsResponse _
@@ -491,12 +490,12 @@ instance encodeGetBulkPublishDetailsResponse :: Encode GetBulkPublishDetailsResp
 
 -- | Constructs GetBulkPublishDetailsResponse from required parameters
 newGetBulkPublishDetailsResponse :: GetBulkPublishDetailsResponse
-newGetBulkPublishDetailsResponse  = GetBulkPublishDetailsResponse { "BulkPublishCompleteTime": (NullOrUndefined Nothing), "BulkPublishStartTime": (NullOrUndefined Nothing), "BulkPublishStatus": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing) }
+newGetBulkPublishDetailsResponse  = GetBulkPublishDetailsResponse { "BulkPublishCompleteTime": Nothing, "BulkPublishStartTime": Nothing, "BulkPublishStatus": Nothing, "FailureMessage": Nothing, "IdentityPoolId": Nothing }
 
 -- | Constructs GetBulkPublishDetailsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBulkPublishDetailsResponse' :: ( { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "BulkPublishStartTime" :: NullOrUndefined (Date) , "BulkPublishCompleteTime" :: NullOrUndefined (Date) , "BulkPublishStatus" :: NullOrUndefined (BulkPublishStatus) , "FailureMessage" :: NullOrUndefined (String) } -> {"IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "BulkPublishStartTime" :: NullOrUndefined (Date) , "BulkPublishCompleteTime" :: NullOrUndefined (Date) , "BulkPublishStatus" :: NullOrUndefined (BulkPublishStatus) , "FailureMessage" :: NullOrUndefined (String) } ) -> GetBulkPublishDetailsResponse
-newGetBulkPublishDetailsResponse'  customize = (GetBulkPublishDetailsResponse <<< customize) { "BulkPublishCompleteTime": (NullOrUndefined Nothing), "BulkPublishStartTime": (NullOrUndefined Nothing), "BulkPublishStatus": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing) }
+newGetBulkPublishDetailsResponse' :: ( { "IdentityPoolId" :: Maybe (IdentityPoolId) , "BulkPublishStartTime" :: Maybe (Date) , "BulkPublishCompleteTime" :: Maybe (Date) , "BulkPublishStatus" :: Maybe (BulkPublishStatus) , "FailureMessage" :: Maybe (String) } -> {"IdentityPoolId" :: Maybe (IdentityPoolId) , "BulkPublishStartTime" :: Maybe (Date) , "BulkPublishCompleteTime" :: Maybe (Date) , "BulkPublishStatus" :: Maybe (BulkPublishStatus) , "FailureMessage" :: Maybe (String) } ) -> GetBulkPublishDetailsResponse
+newGetBulkPublishDetailsResponse'  customize = (GetBulkPublishDetailsResponse <<< customize) { "BulkPublishCompleteTime": Nothing, "BulkPublishStartTime": Nothing, "BulkPublishStatus": Nothing, "FailureMessage": Nothing, "IdentityPoolId": Nothing }
 
 
 
@@ -523,7 +522,7 @@ newGetCognitoEventsRequest' _IdentityPoolId customize = (GetCognitoEventsRequest
 
 -- | <p>The response from the GetCognitoEvents request</p>
 newtype GetCognitoEventsResponse = GetCognitoEventsResponse 
-  { "Events" :: NullOrUndefined (Events)
+  { "Events" :: Maybe (Events)
   }
 derive instance newtypeGetCognitoEventsResponse :: Newtype GetCognitoEventsResponse _
 derive instance repGenericGetCognitoEventsResponse :: Generic GetCognitoEventsResponse _
@@ -533,12 +532,12 @@ instance encodeGetCognitoEventsResponse :: Encode GetCognitoEventsResponse where
 
 -- | Constructs GetCognitoEventsResponse from required parameters
 newGetCognitoEventsResponse :: GetCognitoEventsResponse
-newGetCognitoEventsResponse  = GetCognitoEventsResponse { "Events": (NullOrUndefined Nothing) }
+newGetCognitoEventsResponse  = GetCognitoEventsResponse { "Events": Nothing }
 
 -- | Constructs GetCognitoEventsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCognitoEventsResponse' :: ( { "Events" :: NullOrUndefined (Events) } -> {"Events" :: NullOrUndefined (Events) } ) -> GetCognitoEventsResponse
-newGetCognitoEventsResponse'  customize = (GetCognitoEventsResponse <<< customize) { "Events": (NullOrUndefined Nothing) }
+newGetCognitoEventsResponse' :: ( { "Events" :: Maybe (Events) } -> {"Events" :: Maybe (Events) } ) -> GetCognitoEventsResponse
+newGetCognitoEventsResponse'  customize = (GetCognitoEventsResponse <<< customize) { "Events": Nothing }
 
 
 
@@ -565,9 +564,9 @@ newGetIdentityPoolConfigurationRequest' _IdentityPoolId customize = (GetIdentity
 
 -- | <p>The output for the GetIdentityPoolConfiguration operation.</p>
 newtype GetIdentityPoolConfigurationResponse = GetIdentityPoolConfigurationResponse 
-  { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId)
-  , "PushSync" :: NullOrUndefined (PushSync)
-  , "CognitoStreams" :: NullOrUndefined (CognitoStreams)
+  { "IdentityPoolId" :: Maybe (IdentityPoolId)
+  , "PushSync" :: Maybe (PushSync)
+  , "CognitoStreams" :: Maybe (CognitoStreams)
   }
 derive instance newtypeGetIdentityPoolConfigurationResponse :: Newtype GetIdentityPoolConfigurationResponse _
 derive instance repGenericGetIdentityPoolConfigurationResponse :: Generic GetIdentityPoolConfigurationResponse _
@@ -577,12 +576,12 @@ instance encodeGetIdentityPoolConfigurationResponse :: Encode GetIdentityPoolCon
 
 -- | Constructs GetIdentityPoolConfigurationResponse from required parameters
 newGetIdentityPoolConfigurationResponse :: GetIdentityPoolConfigurationResponse
-newGetIdentityPoolConfigurationResponse  = GetIdentityPoolConfigurationResponse { "CognitoStreams": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "PushSync": (NullOrUndefined Nothing) }
+newGetIdentityPoolConfigurationResponse  = GetIdentityPoolConfigurationResponse { "CognitoStreams": Nothing, "IdentityPoolId": Nothing, "PushSync": Nothing }
 
 -- | Constructs GetIdentityPoolConfigurationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetIdentityPoolConfigurationResponse' :: ( { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "PushSync" :: NullOrUndefined (PushSync) , "CognitoStreams" :: NullOrUndefined (CognitoStreams) } -> {"IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "PushSync" :: NullOrUndefined (PushSync) , "CognitoStreams" :: NullOrUndefined (CognitoStreams) } ) -> GetIdentityPoolConfigurationResponse
-newGetIdentityPoolConfigurationResponse'  customize = (GetIdentityPoolConfigurationResponse <<< customize) { "CognitoStreams": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "PushSync": (NullOrUndefined Nothing) }
+newGetIdentityPoolConfigurationResponse' :: ( { "IdentityPoolId" :: Maybe (IdentityPoolId) , "PushSync" :: Maybe (PushSync) , "CognitoStreams" :: Maybe (CognitoStreams) } -> {"IdentityPoolId" :: Maybe (IdentityPoolId) , "PushSync" :: Maybe (PushSync) , "CognitoStreams" :: Maybe (CognitoStreams) } ) -> GetIdentityPoolConfigurationResponse
+newGetIdentityPoolConfigurationResponse'  customize = (GetIdentityPoolConfigurationResponse <<< customize) { "CognitoStreams": Nothing, "IdentityPoolId": Nothing, "PushSync": Nothing }
 
 
 
@@ -606,10 +605,10 @@ instance encodeIdentityPoolId :: Encode IdentityPoolId where encode = genericEnc
 
 -- | Usage information for the identity pool.
 newtype IdentityPoolUsage = IdentityPoolUsage 
-  { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId)
-  , "SyncSessionsCount" :: NullOrUndefined (Number)
-  , "DataStorage" :: NullOrUndefined (Number)
-  , "LastModifiedDate" :: NullOrUndefined (Date)
+  { "IdentityPoolId" :: Maybe (IdentityPoolId)
+  , "SyncSessionsCount" :: Maybe (Number)
+  , "DataStorage" :: Maybe (Number)
+  , "LastModifiedDate" :: Maybe (Date)
   }
 derive instance newtypeIdentityPoolUsage :: Newtype IdentityPoolUsage _
 derive instance repGenericIdentityPoolUsage :: Generic IdentityPoolUsage _
@@ -619,12 +618,12 @@ instance encodeIdentityPoolUsage :: Encode IdentityPoolUsage where encode = gene
 
 -- | Constructs IdentityPoolUsage from required parameters
 newIdentityPoolUsage :: IdentityPoolUsage
-newIdentityPoolUsage  = IdentityPoolUsage { "DataStorage": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "SyncSessionsCount": (NullOrUndefined Nothing) }
+newIdentityPoolUsage  = IdentityPoolUsage { "DataStorage": Nothing, "IdentityPoolId": Nothing, "LastModifiedDate": Nothing, "SyncSessionsCount": Nothing }
 
 -- | Constructs IdentityPoolUsage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIdentityPoolUsage' :: ( { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "SyncSessionsCount" :: NullOrUndefined (Number) , "DataStorage" :: NullOrUndefined (Number) , "LastModifiedDate" :: NullOrUndefined (Date) } -> {"IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "SyncSessionsCount" :: NullOrUndefined (Number) , "DataStorage" :: NullOrUndefined (Number) , "LastModifiedDate" :: NullOrUndefined (Date) } ) -> IdentityPoolUsage
-newIdentityPoolUsage'  customize = (IdentityPoolUsage <<< customize) { "DataStorage": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "SyncSessionsCount": (NullOrUndefined Nothing) }
+newIdentityPoolUsage' :: ( { "IdentityPoolId" :: Maybe (IdentityPoolId) , "SyncSessionsCount" :: Maybe (Number) , "DataStorage" :: Maybe (Number) , "LastModifiedDate" :: Maybe (Date) } -> {"IdentityPoolId" :: Maybe (IdentityPoolId) , "SyncSessionsCount" :: Maybe (Number) , "DataStorage" :: Maybe (Number) , "LastModifiedDate" :: Maybe (Date) } ) -> IdentityPoolUsage
+newIdentityPoolUsage'  customize = (IdentityPoolUsage <<< customize) { "DataStorage": Nothing, "IdentityPoolId": Nothing, "LastModifiedDate": Nothing, "SyncSessionsCount": Nothing }
 
 
 
@@ -639,11 +638,11 @@ instance encodeIdentityPoolUsageList :: Encode IdentityPoolUsageList where encod
 
 -- | Usage information for the identity.
 newtype IdentityUsage = IdentityUsage 
-  { "IdentityId" :: NullOrUndefined (IdentityId)
-  , "IdentityPoolId" :: NullOrUndefined (IdentityPoolId)
-  , "LastModifiedDate" :: NullOrUndefined (Date)
-  , "DatasetCount" :: NullOrUndefined (Int)
-  , "DataStorage" :: NullOrUndefined (Number)
+  { "IdentityId" :: Maybe (IdentityId)
+  , "IdentityPoolId" :: Maybe (IdentityPoolId)
+  , "LastModifiedDate" :: Maybe (Date)
+  , "DatasetCount" :: Maybe (Int)
+  , "DataStorage" :: Maybe (Number)
   }
 derive instance newtypeIdentityUsage :: Newtype IdentityUsage _
 derive instance repGenericIdentityUsage :: Generic IdentityUsage _
@@ -653,12 +652,12 @@ instance encodeIdentityUsage :: Encode IdentityUsage where encode = genericEncod
 
 -- | Constructs IdentityUsage from required parameters
 newIdentityUsage :: IdentityUsage
-newIdentityUsage  = IdentityUsage { "DataStorage": (NullOrUndefined Nothing), "DatasetCount": (NullOrUndefined Nothing), "IdentityId": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing) }
+newIdentityUsage  = IdentityUsage { "DataStorage": Nothing, "DatasetCount": Nothing, "IdentityId": Nothing, "IdentityPoolId": Nothing, "LastModifiedDate": Nothing }
 
 -- | Constructs IdentityUsage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIdentityUsage' :: ( { "IdentityId" :: NullOrUndefined (IdentityId) , "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "LastModifiedDate" :: NullOrUndefined (Date) , "DatasetCount" :: NullOrUndefined (Int) , "DataStorage" :: NullOrUndefined (Number) } -> {"IdentityId" :: NullOrUndefined (IdentityId) , "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "LastModifiedDate" :: NullOrUndefined (Date) , "DatasetCount" :: NullOrUndefined (Int) , "DataStorage" :: NullOrUndefined (Number) } ) -> IdentityUsage
-newIdentityUsage'  customize = (IdentityUsage <<< customize) { "DataStorage": (NullOrUndefined Nothing), "DatasetCount": (NullOrUndefined Nothing), "IdentityId": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing) }
+newIdentityUsage' :: ( { "IdentityId" :: Maybe (IdentityId) , "IdentityPoolId" :: Maybe (IdentityPoolId) , "LastModifiedDate" :: Maybe (Date) , "DatasetCount" :: Maybe (Int) , "DataStorage" :: Maybe (Number) } -> {"IdentityId" :: Maybe (IdentityId) , "IdentityPoolId" :: Maybe (IdentityPoolId) , "LastModifiedDate" :: Maybe (Date) , "DatasetCount" :: Maybe (Int) , "DataStorage" :: Maybe (Number) } ) -> IdentityUsage
+newIdentityUsage'  customize = (IdentityUsage <<< customize) { "DataStorage": Nothing, "DatasetCount": Nothing, "IdentityId": Nothing, "IdentityPoolId": Nothing, "LastModifiedDate": Nothing }
 
 
 
@@ -809,8 +808,8 @@ newLimitExceededException' _message customize = (LimitExceededException <<< cust
 newtype ListDatasetsRequest = ListDatasetsRequest 
   { "IdentityPoolId" :: (IdentityPoolId)
   , "IdentityId" :: (IdentityId)
-  , "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (IntegerString)
+  , "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (IntegerString)
   }
 derive instance newtypeListDatasetsRequest :: Newtype ListDatasetsRequest _
 derive instance repGenericListDatasetsRequest :: Generic ListDatasetsRequest _
@@ -820,20 +819,20 @@ instance encodeListDatasetsRequest :: Encode ListDatasetsRequest where encode = 
 
 -- | Constructs ListDatasetsRequest from required parameters
 newListDatasetsRequest :: IdentityId -> IdentityPoolId -> ListDatasetsRequest
-newListDatasetsRequest _IdentityId _IdentityPoolId = ListDatasetsRequest { "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDatasetsRequest _IdentityId _IdentityPoolId = ListDatasetsRequest { "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDatasetsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDatasetsRequest' :: IdentityId -> IdentityPoolId -> ( { "IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerString) } -> {"IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerString) } ) -> ListDatasetsRequest
-newListDatasetsRequest' _IdentityId _IdentityPoolId customize = (ListDatasetsRequest <<< customize) { "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDatasetsRequest' :: IdentityId -> IdentityPoolId -> ( { "IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (IntegerString) } -> {"IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (IntegerString) } ) -> ListDatasetsRequest
+newListDatasetsRequest' _IdentityId _IdentityPoolId customize = (ListDatasetsRequest <<< customize) { "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | Returned for a successful ListDatasets request.
 newtype ListDatasetsResponse = ListDatasetsResponse 
-  { "Datasets" :: NullOrUndefined (DatasetList)
-  , "Count" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Datasets" :: Maybe (DatasetList)
+  , "Count" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListDatasetsResponse :: Newtype ListDatasetsResponse _
 derive instance repGenericListDatasetsResponse :: Generic ListDatasetsResponse _
@@ -843,19 +842,19 @@ instance encodeListDatasetsResponse :: Encode ListDatasetsResponse where encode 
 
 -- | Constructs ListDatasetsResponse from required parameters
 newListDatasetsResponse :: ListDatasetsResponse
-newListDatasetsResponse  = ListDatasetsResponse { "Count": (NullOrUndefined Nothing), "Datasets": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDatasetsResponse  = ListDatasetsResponse { "Count": Nothing, "Datasets": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDatasetsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDatasetsResponse' :: ( { "Datasets" :: NullOrUndefined (DatasetList) , "Count" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } -> {"Datasets" :: NullOrUndefined (DatasetList) , "Count" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } ) -> ListDatasetsResponse
-newListDatasetsResponse'  customize = (ListDatasetsResponse <<< customize) { "Count": (NullOrUndefined Nothing), "Datasets": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDatasetsResponse' :: ( { "Datasets" :: Maybe (DatasetList) , "Count" :: Maybe (Int) , "NextToken" :: Maybe (String) } -> {"Datasets" :: Maybe (DatasetList) , "Count" :: Maybe (Int) , "NextToken" :: Maybe (String) } ) -> ListDatasetsResponse
+newListDatasetsResponse'  customize = (ListDatasetsResponse <<< customize) { "Count": Nothing, "Datasets": Nothing, "NextToken": Nothing }
 
 
 
 -- | A request for usage information on an identity pool.
 newtype ListIdentityPoolUsageRequest = ListIdentityPoolUsageRequest 
-  { "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (IntegerString)
+  { "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (IntegerString)
   }
 derive instance newtypeListIdentityPoolUsageRequest :: Newtype ListIdentityPoolUsageRequest _
 derive instance repGenericListIdentityPoolUsageRequest :: Generic ListIdentityPoolUsageRequest _
@@ -865,21 +864,21 @@ instance encodeListIdentityPoolUsageRequest :: Encode ListIdentityPoolUsageReque
 
 -- | Constructs ListIdentityPoolUsageRequest from required parameters
 newListIdentityPoolUsageRequest :: ListIdentityPoolUsageRequest
-newListIdentityPoolUsageRequest  = ListIdentityPoolUsageRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIdentityPoolUsageRequest  = ListIdentityPoolUsageRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIdentityPoolUsageRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIdentityPoolUsageRequest' :: ( { "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerString) } -> {"NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerString) } ) -> ListIdentityPoolUsageRequest
-newListIdentityPoolUsageRequest'  customize = (ListIdentityPoolUsageRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIdentityPoolUsageRequest' :: ( { "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (IntegerString) } -> {"NextToken" :: Maybe (String) , "MaxResults" :: Maybe (IntegerString) } ) -> ListIdentityPoolUsageRequest
+newListIdentityPoolUsageRequest'  customize = (ListIdentityPoolUsageRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | Returned for a successful ListIdentityPoolUsage request.
 newtype ListIdentityPoolUsageResponse = ListIdentityPoolUsageResponse 
-  { "IdentityPoolUsages" :: NullOrUndefined (IdentityPoolUsageList)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "Count" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
+  { "IdentityPoolUsages" :: Maybe (IdentityPoolUsageList)
+  , "MaxResults" :: Maybe (Int)
+  , "Count" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListIdentityPoolUsageResponse :: Newtype ListIdentityPoolUsageResponse _
 derive instance repGenericListIdentityPoolUsageResponse :: Generic ListIdentityPoolUsageResponse _
@@ -889,12 +888,12 @@ instance encodeListIdentityPoolUsageResponse :: Encode ListIdentityPoolUsageResp
 
 -- | Constructs ListIdentityPoolUsageResponse from required parameters
 newListIdentityPoolUsageResponse :: ListIdentityPoolUsageResponse
-newListIdentityPoolUsageResponse  = ListIdentityPoolUsageResponse { "Count": (NullOrUndefined Nothing), "IdentityPoolUsages": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIdentityPoolUsageResponse  = ListIdentityPoolUsageResponse { "Count": Nothing, "IdentityPoolUsages": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIdentityPoolUsageResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIdentityPoolUsageResponse' :: ( { "IdentityPoolUsages" :: NullOrUndefined (IdentityPoolUsageList) , "MaxResults" :: NullOrUndefined (Int) , "Count" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } -> {"IdentityPoolUsages" :: NullOrUndefined (IdentityPoolUsageList) , "MaxResults" :: NullOrUndefined (Int) , "Count" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } ) -> ListIdentityPoolUsageResponse
-newListIdentityPoolUsageResponse'  customize = (ListIdentityPoolUsageResponse <<< customize) { "Count": (NullOrUndefined Nothing), "IdentityPoolUsages": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIdentityPoolUsageResponse' :: ( { "IdentityPoolUsages" :: Maybe (IdentityPoolUsageList) , "MaxResults" :: Maybe (Int) , "Count" :: Maybe (Int) , "NextToken" :: Maybe (String) } -> {"IdentityPoolUsages" :: Maybe (IdentityPoolUsageList) , "MaxResults" :: Maybe (Int) , "Count" :: Maybe (Int) , "NextToken" :: Maybe (String) } ) -> ListIdentityPoolUsageResponse
+newListIdentityPoolUsageResponse'  customize = (ListIdentityPoolUsageResponse <<< customize) { "Count": Nothing, "IdentityPoolUsages": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
@@ -903,10 +902,10 @@ newtype ListRecordsRequest = ListRecordsRequest
   { "IdentityPoolId" :: (IdentityPoolId)
   , "IdentityId" :: (IdentityId)
   , "DatasetName" :: (DatasetName)
-  , "LastSyncCount" :: NullOrUndefined (Number)
-  , "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (IntegerString)
-  , "SyncSessionToken" :: NullOrUndefined (SyncSessionToken)
+  , "LastSyncCount" :: Maybe (Number)
+  , "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (IntegerString)
+  , "SyncSessionToken" :: Maybe (SyncSessionToken)
   }
 derive instance newtypeListRecordsRequest :: Newtype ListRecordsRequest _
 derive instance repGenericListRecordsRequest :: Generic ListRecordsRequest _
@@ -916,26 +915,26 @@ instance encodeListRecordsRequest :: Encode ListRecordsRequest where encode = ge
 
 -- | Constructs ListRecordsRequest from required parameters
 newListRecordsRequest :: DatasetName -> IdentityId -> IdentityPoolId -> ListRecordsRequest
-newListRecordsRequest _DatasetName _IdentityId _IdentityPoolId = ListRecordsRequest { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "LastSyncCount": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SyncSessionToken": (NullOrUndefined Nothing) }
+newListRecordsRequest _DatasetName _IdentityId _IdentityPoolId = ListRecordsRequest { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "LastSyncCount": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "SyncSessionToken": Nothing }
 
 -- | Constructs ListRecordsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> ( { "IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "LastSyncCount" :: NullOrUndefined (Number) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerString) , "SyncSessionToken" :: NullOrUndefined (SyncSessionToken) } -> {"IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "LastSyncCount" :: NullOrUndefined (Number) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerString) , "SyncSessionToken" :: NullOrUndefined (SyncSessionToken) } ) -> ListRecordsRequest
-newListRecordsRequest' _DatasetName _IdentityId _IdentityPoolId customize = (ListRecordsRequest <<< customize) { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "LastSyncCount": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SyncSessionToken": (NullOrUndefined Nothing) }
+newListRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> ( { "IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "LastSyncCount" :: Maybe (Number) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (IntegerString) , "SyncSessionToken" :: Maybe (SyncSessionToken) } -> {"IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "LastSyncCount" :: Maybe (Number) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (IntegerString) , "SyncSessionToken" :: Maybe (SyncSessionToken) } ) -> ListRecordsRequest
+newListRecordsRequest' _DatasetName _IdentityId _IdentityPoolId customize = (ListRecordsRequest <<< customize) { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "LastSyncCount": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "SyncSessionToken": Nothing }
 
 
 
 -- | Returned for a successful ListRecordsRequest.
 newtype ListRecordsResponse = ListRecordsResponse 
-  { "Records" :: NullOrUndefined (RecordList)
-  , "NextToken" :: NullOrUndefined (String)
-  , "Count" :: NullOrUndefined (Int)
-  , "DatasetSyncCount" :: NullOrUndefined (Number)
-  , "LastModifiedBy" :: NullOrUndefined (String)
-  , "MergedDatasetNames" :: NullOrUndefined (MergedDatasetNameList)
-  , "DatasetExists" :: NullOrUndefined (Boolean)
-  , "DatasetDeletedAfterRequestedSyncCount" :: NullOrUndefined (Boolean)
-  , "SyncSessionToken" :: NullOrUndefined (String)
+  { "Records" :: Maybe (RecordList)
+  , "NextToken" :: Maybe (String)
+  , "Count" :: Maybe (Int)
+  , "DatasetSyncCount" :: Maybe (Number)
+  , "LastModifiedBy" :: Maybe (String)
+  , "MergedDatasetNames" :: Maybe (MergedDatasetNameList)
+  , "DatasetExists" :: Maybe (Boolean)
+  , "DatasetDeletedAfterRequestedSyncCount" :: Maybe (Boolean)
+  , "SyncSessionToken" :: Maybe (String)
   }
 derive instance newtypeListRecordsResponse :: Newtype ListRecordsResponse _
 derive instance repGenericListRecordsResponse :: Generic ListRecordsResponse _
@@ -945,12 +944,12 @@ instance encodeListRecordsResponse :: Encode ListRecordsResponse where encode = 
 
 -- | Constructs ListRecordsResponse from required parameters
 newListRecordsResponse :: ListRecordsResponse
-newListRecordsResponse  = ListRecordsResponse { "Count": (NullOrUndefined Nothing), "DatasetDeletedAfterRequestedSyncCount": (NullOrUndefined Nothing), "DatasetExists": (NullOrUndefined Nothing), "DatasetSyncCount": (NullOrUndefined Nothing), "LastModifiedBy": (NullOrUndefined Nothing), "MergedDatasetNames": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Records": (NullOrUndefined Nothing), "SyncSessionToken": (NullOrUndefined Nothing) }
+newListRecordsResponse  = ListRecordsResponse { "Count": Nothing, "DatasetDeletedAfterRequestedSyncCount": Nothing, "DatasetExists": Nothing, "DatasetSyncCount": Nothing, "LastModifiedBy": Nothing, "MergedDatasetNames": Nothing, "NextToken": Nothing, "Records": Nothing, "SyncSessionToken": Nothing }
 
 -- | Constructs ListRecordsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListRecordsResponse' :: ( { "Records" :: NullOrUndefined (RecordList) , "NextToken" :: NullOrUndefined (String) , "Count" :: NullOrUndefined (Int) , "DatasetSyncCount" :: NullOrUndefined (Number) , "LastModifiedBy" :: NullOrUndefined (String) , "MergedDatasetNames" :: NullOrUndefined (MergedDatasetNameList) , "DatasetExists" :: NullOrUndefined (Boolean) , "DatasetDeletedAfterRequestedSyncCount" :: NullOrUndefined (Boolean) , "SyncSessionToken" :: NullOrUndefined (String) } -> {"Records" :: NullOrUndefined (RecordList) , "NextToken" :: NullOrUndefined (String) , "Count" :: NullOrUndefined (Int) , "DatasetSyncCount" :: NullOrUndefined (Number) , "LastModifiedBy" :: NullOrUndefined (String) , "MergedDatasetNames" :: NullOrUndefined (MergedDatasetNameList) , "DatasetExists" :: NullOrUndefined (Boolean) , "DatasetDeletedAfterRequestedSyncCount" :: NullOrUndefined (Boolean) , "SyncSessionToken" :: NullOrUndefined (String) } ) -> ListRecordsResponse
-newListRecordsResponse'  customize = (ListRecordsResponse <<< customize) { "Count": (NullOrUndefined Nothing), "DatasetDeletedAfterRequestedSyncCount": (NullOrUndefined Nothing), "DatasetExists": (NullOrUndefined Nothing), "DatasetSyncCount": (NullOrUndefined Nothing), "LastModifiedBy": (NullOrUndefined Nothing), "MergedDatasetNames": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Records": (NullOrUndefined Nothing), "SyncSessionToken": (NullOrUndefined Nothing) }
+newListRecordsResponse' :: ( { "Records" :: Maybe (RecordList) , "NextToken" :: Maybe (String) , "Count" :: Maybe (Int) , "DatasetSyncCount" :: Maybe (Number) , "LastModifiedBy" :: Maybe (String) , "MergedDatasetNames" :: Maybe (MergedDatasetNameList) , "DatasetExists" :: Maybe (Boolean) , "DatasetDeletedAfterRequestedSyncCount" :: Maybe (Boolean) , "SyncSessionToken" :: Maybe (String) } -> {"Records" :: Maybe (RecordList) , "NextToken" :: Maybe (String) , "Count" :: Maybe (Int) , "DatasetSyncCount" :: Maybe (Number) , "LastModifiedBy" :: Maybe (String) , "MergedDatasetNames" :: Maybe (MergedDatasetNameList) , "DatasetExists" :: Maybe (Boolean) , "DatasetDeletedAfterRequestedSyncCount" :: Maybe (Boolean) , "SyncSessionToken" :: Maybe (String) } ) -> ListRecordsResponse
+newListRecordsResponse'  customize = (ListRecordsResponse <<< customize) { "Count": Nothing, "DatasetDeletedAfterRequestedSyncCount": Nothing, "DatasetExists": Nothing, "DatasetSyncCount": Nothing, "LastModifiedBy": Nothing, "MergedDatasetNames": Nothing, "NextToken": Nothing, "Records": Nothing, "SyncSessionToken": Nothing }
 
 
 
@@ -1004,8 +1003,8 @@ instance encodePlatform :: Encode Platform where encode = genericEncode options
 
 -- | <p>Configuration options to be applied to the identity pool.</p>
 newtype PushSync = PushSync 
-  { "ApplicationArns" :: NullOrUndefined (ApplicationArnList)
-  , "RoleArn" :: NullOrUndefined (AssumeRoleArn)
+  { "ApplicationArns" :: Maybe (ApplicationArnList)
+  , "RoleArn" :: Maybe (AssumeRoleArn)
   }
 derive instance newtypePushSync :: Newtype PushSync _
 derive instance repGenericPushSync :: Generic PushSync _
@@ -1015,12 +1014,12 @@ instance encodePushSync :: Encode PushSync where encode = genericEncode options
 
 -- | Constructs PushSync from required parameters
 newPushSync :: PushSync
-newPushSync  = PushSync { "ApplicationArns": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newPushSync  = PushSync { "ApplicationArns": Nothing, "RoleArn": Nothing }
 
 -- | Constructs PushSync's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPushSync' :: ( { "ApplicationArns" :: NullOrUndefined (ApplicationArnList) , "RoleArn" :: NullOrUndefined (AssumeRoleArn) } -> {"ApplicationArns" :: NullOrUndefined (ApplicationArnList) , "RoleArn" :: NullOrUndefined (AssumeRoleArn) } ) -> PushSync
-newPushSync'  customize = (PushSync <<< customize) { "ApplicationArns": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newPushSync' :: ( { "ApplicationArns" :: Maybe (ApplicationArnList) , "RoleArn" :: Maybe (AssumeRoleArn) } -> {"ApplicationArns" :: Maybe (ApplicationArnList) , "RoleArn" :: Maybe (AssumeRoleArn) } ) -> PushSync
+newPushSync'  customize = (PushSync <<< customize) { "ApplicationArns": Nothing, "RoleArn": Nothing }
 
 
 
@@ -1035,12 +1034,12 @@ instance encodePushToken :: Encode PushToken where encode = genericEncode option
 
 -- | The basic data structure of a dataset.
 newtype Record'' = Record'' 
-  { "Key" :: NullOrUndefined (RecordKey)
-  , "Value" :: NullOrUndefined (RecordValue)
-  , "SyncCount" :: NullOrUndefined (Number)
-  , "LastModifiedDate" :: NullOrUndefined (Date)
-  , "LastModifiedBy" :: NullOrUndefined (String)
-  , "DeviceLastModifiedDate" :: NullOrUndefined (Date)
+  { "Key" :: Maybe (RecordKey)
+  , "Value" :: Maybe (RecordValue)
+  , "SyncCount" :: Maybe (Number)
+  , "LastModifiedDate" :: Maybe (Date)
+  , "LastModifiedBy" :: Maybe (String)
+  , "DeviceLastModifiedDate" :: Maybe (Date)
   }
 derive instance newtypeRecord'' :: Newtype Record'' _
 derive instance repGenericRecord'' :: Generic Record'' _
@@ -1050,12 +1049,12 @@ instance encodeRecord'' :: Encode Record'' where encode = genericEncode options
 
 -- | Constructs Record'' from required parameters
 newRecord'' :: Record''
-newRecord''  = Record'' { "DeviceLastModifiedDate": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModifiedBy": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "SyncCount": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newRecord''  = Record'' { "DeviceLastModifiedDate": Nothing, "Key": Nothing, "LastModifiedBy": Nothing, "LastModifiedDate": Nothing, "SyncCount": Nothing, "Value": Nothing }
 
 -- | Constructs Record'''s fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRecord''' :: ( { "Key" :: NullOrUndefined (RecordKey) , "Value" :: NullOrUndefined (RecordValue) , "SyncCount" :: NullOrUndefined (Number) , "LastModifiedDate" :: NullOrUndefined (Date) , "LastModifiedBy" :: NullOrUndefined (String) , "DeviceLastModifiedDate" :: NullOrUndefined (Date) } -> {"Key" :: NullOrUndefined (RecordKey) , "Value" :: NullOrUndefined (RecordValue) , "SyncCount" :: NullOrUndefined (Number) , "LastModifiedDate" :: NullOrUndefined (Date) , "LastModifiedBy" :: NullOrUndefined (String) , "DeviceLastModifiedDate" :: NullOrUndefined (Date) } ) -> Record''
-newRecord'''  customize = (Record'' <<< customize) { "DeviceLastModifiedDate": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModifiedBy": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "SyncCount": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newRecord''' :: ( { "Key" :: Maybe (RecordKey) , "Value" :: Maybe (RecordValue) , "SyncCount" :: Maybe (Number) , "LastModifiedDate" :: Maybe (Date) , "LastModifiedBy" :: Maybe (String) , "DeviceLastModifiedDate" :: Maybe (Date) } -> {"Key" :: Maybe (RecordKey) , "Value" :: Maybe (RecordValue) , "SyncCount" :: Maybe (Number) , "LastModifiedDate" :: Maybe (Date) , "LastModifiedBy" :: Maybe (String) , "DeviceLastModifiedDate" :: Maybe (Date) } ) -> Record''
+newRecord'''  customize = (Record'' <<< customize) { "DeviceLastModifiedDate": Nothing, "Key": Nothing, "LastModifiedBy": Nothing, "LastModifiedDate": Nothing, "SyncCount": Nothing, "Value": Nothing }
 
 
 
@@ -1081,9 +1080,9 @@ instance encodeRecordList :: Encode RecordList where encode = genericEncode opti
 newtype RecordPatch = RecordPatch 
   { "Op" :: (Operation)
   , "Key" :: (RecordKey)
-  , "Value" :: NullOrUndefined (RecordValue)
+  , "Value" :: Maybe (RecordValue)
   , "SyncCount" :: (Number)
-  , "DeviceLastModifiedDate" :: NullOrUndefined (Date)
+  , "DeviceLastModifiedDate" :: Maybe (Date)
   }
 derive instance newtypeRecordPatch :: Newtype RecordPatch _
 derive instance repGenericRecordPatch :: Generic RecordPatch _
@@ -1093,12 +1092,12 @@ instance encodeRecordPatch :: Encode RecordPatch where encode = genericEncode op
 
 -- | Constructs RecordPatch from required parameters
 newRecordPatch :: RecordKey -> Operation -> Number -> RecordPatch
-newRecordPatch _Key _Op _SyncCount = RecordPatch { "Key": _Key, "Op": _Op, "SyncCount": _SyncCount, "DeviceLastModifiedDate": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newRecordPatch _Key _Op _SyncCount = RecordPatch { "Key": _Key, "Op": _Op, "SyncCount": _SyncCount, "DeviceLastModifiedDate": Nothing, "Value": Nothing }
 
 -- | Constructs RecordPatch's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRecordPatch' :: RecordKey -> Operation -> Number -> ( { "Op" :: (Operation) , "Key" :: (RecordKey) , "Value" :: NullOrUndefined (RecordValue) , "SyncCount" :: (Number) , "DeviceLastModifiedDate" :: NullOrUndefined (Date) } -> {"Op" :: (Operation) , "Key" :: (RecordKey) , "Value" :: NullOrUndefined (RecordValue) , "SyncCount" :: (Number) , "DeviceLastModifiedDate" :: NullOrUndefined (Date) } ) -> RecordPatch
-newRecordPatch' _Key _Op _SyncCount customize = (RecordPatch <<< customize) { "Key": _Key, "Op": _Op, "SyncCount": _SyncCount, "DeviceLastModifiedDate": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newRecordPatch' :: RecordKey -> Operation -> Number -> ( { "Op" :: (Operation) , "Key" :: (RecordKey) , "Value" :: Maybe (RecordValue) , "SyncCount" :: (Number) , "DeviceLastModifiedDate" :: Maybe (Date) } -> {"Op" :: (Operation) , "Key" :: (RecordKey) , "Value" :: Maybe (RecordValue) , "SyncCount" :: (Number) , "DeviceLastModifiedDate" :: Maybe (Date) } ) -> RecordPatch
+newRecordPatch' _Key _Op _SyncCount customize = (RecordPatch <<< customize) { "Key": _Key, "Op": _Op, "SyncCount": _SyncCount, "DeviceLastModifiedDate": Nothing, "Value": Nothing }
 
 
 
@@ -1146,7 +1145,7 @@ newRegisterDeviceRequest' _IdentityId _IdentityPoolId _Platform _Token customize
 
 -- | <p>Response to a RegisterDevice request.</p>
 newtype RegisterDeviceResponse = RegisterDeviceResponse 
-  { "DeviceId" :: NullOrUndefined (DeviceId)
+  { "DeviceId" :: Maybe (DeviceId)
   }
 derive instance newtypeRegisterDeviceResponse :: Newtype RegisterDeviceResponse _
 derive instance repGenericRegisterDeviceResponse :: Generic RegisterDeviceResponse _
@@ -1156,12 +1155,12 @@ instance encodeRegisterDeviceResponse :: Encode RegisterDeviceResponse where enc
 
 -- | Constructs RegisterDeviceResponse from required parameters
 newRegisterDeviceResponse :: RegisterDeviceResponse
-newRegisterDeviceResponse  = RegisterDeviceResponse { "DeviceId": (NullOrUndefined Nothing) }
+newRegisterDeviceResponse  = RegisterDeviceResponse { "DeviceId": Nothing }
 
 -- | Constructs RegisterDeviceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterDeviceResponse' :: ( { "DeviceId" :: NullOrUndefined (DeviceId) } -> {"DeviceId" :: NullOrUndefined (DeviceId) } ) -> RegisterDeviceResponse
-newRegisterDeviceResponse'  customize = (RegisterDeviceResponse <<< customize) { "DeviceId": (NullOrUndefined Nothing) }
+newRegisterDeviceResponse' :: ( { "DeviceId" :: Maybe (DeviceId) } -> {"DeviceId" :: Maybe (DeviceId) } ) -> RegisterDeviceResponse
+newRegisterDeviceResponse'  customize = (RegisterDeviceResponse <<< customize) { "DeviceId": Nothing }
 
 
 
@@ -1232,8 +1231,8 @@ newSetCognitoEventsRequest' _Events _IdentityPoolId customize = (SetCognitoEvent
 -- | <p>The input for the SetIdentityPoolConfiguration operation.</p>
 newtype SetIdentityPoolConfigurationRequest = SetIdentityPoolConfigurationRequest 
   { "IdentityPoolId" :: (IdentityPoolId)
-  , "PushSync" :: NullOrUndefined (PushSync)
-  , "CognitoStreams" :: NullOrUndefined (CognitoStreams)
+  , "PushSync" :: Maybe (PushSync)
+  , "CognitoStreams" :: Maybe (CognitoStreams)
   }
 derive instance newtypeSetIdentityPoolConfigurationRequest :: Newtype SetIdentityPoolConfigurationRequest _
 derive instance repGenericSetIdentityPoolConfigurationRequest :: Generic SetIdentityPoolConfigurationRequest _
@@ -1243,20 +1242,20 @@ instance encodeSetIdentityPoolConfigurationRequest :: Encode SetIdentityPoolConf
 
 -- | Constructs SetIdentityPoolConfigurationRequest from required parameters
 newSetIdentityPoolConfigurationRequest :: IdentityPoolId -> SetIdentityPoolConfigurationRequest
-newSetIdentityPoolConfigurationRequest _IdentityPoolId = SetIdentityPoolConfigurationRequest { "IdentityPoolId": _IdentityPoolId, "CognitoStreams": (NullOrUndefined Nothing), "PushSync": (NullOrUndefined Nothing) }
+newSetIdentityPoolConfigurationRequest _IdentityPoolId = SetIdentityPoolConfigurationRequest { "IdentityPoolId": _IdentityPoolId, "CognitoStreams": Nothing, "PushSync": Nothing }
 
 -- | Constructs SetIdentityPoolConfigurationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetIdentityPoolConfigurationRequest' :: IdentityPoolId -> ( { "IdentityPoolId" :: (IdentityPoolId) , "PushSync" :: NullOrUndefined (PushSync) , "CognitoStreams" :: NullOrUndefined (CognitoStreams) } -> {"IdentityPoolId" :: (IdentityPoolId) , "PushSync" :: NullOrUndefined (PushSync) , "CognitoStreams" :: NullOrUndefined (CognitoStreams) } ) -> SetIdentityPoolConfigurationRequest
-newSetIdentityPoolConfigurationRequest' _IdentityPoolId customize = (SetIdentityPoolConfigurationRequest <<< customize) { "IdentityPoolId": _IdentityPoolId, "CognitoStreams": (NullOrUndefined Nothing), "PushSync": (NullOrUndefined Nothing) }
+newSetIdentityPoolConfigurationRequest' :: IdentityPoolId -> ( { "IdentityPoolId" :: (IdentityPoolId) , "PushSync" :: Maybe (PushSync) , "CognitoStreams" :: Maybe (CognitoStreams) } -> {"IdentityPoolId" :: (IdentityPoolId) , "PushSync" :: Maybe (PushSync) , "CognitoStreams" :: Maybe (CognitoStreams) } ) -> SetIdentityPoolConfigurationRequest
+newSetIdentityPoolConfigurationRequest' _IdentityPoolId customize = (SetIdentityPoolConfigurationRequest <<< customize) { "IdentityPoolId": _IdentityPoolId, "CognitoStreams": Nothing, "PushSync": Nothing }
 
 
 
 -- | <p>The output for the SetIdentityPoolConfiguration operation</p>
 newtype SetIdentityPoolConfigurationResponse = SetIdentityPoolConfigurationResponse 
-  { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId)
-  , "PushSync" :: NullOrUndefined (PushSync)
-  , "CognitoStreams" :: NullOrUndefined (CognitoStreams)
+  { "IdentityPoolId" :: Maybe (IdentityPoolId)
+  , "PushSync" :: Maybe (PushSync)
+  , "CognitoStreams" :: Maybe (CognitoStreams)
   }
 derive instance newtypeSetIdentityPoolConfigurationResponse :: Newtype SetIdentityPoolConfigurationResponse _
 derive instance repGenericSetIdentityPoolConfigurationResponse :: Generic SetIdentityPoolConfigurationResponse _
@@ -1266,12 +1265,12 @@ instance encodeSetIdentityPoolConfigurationResponse :: Encode SetIdentityPoolCon
 
 -- | Constructs SetIdentityPoolConfigurationResponse from required parameters
 newSetIdentityPoolConfigurationResponse :: SetIdentityPoolConfigurationResponse
-newSetIdentityPoolConfigurationResponse  = SetIdentityPoolConfigurationResponse { "CognitoStreams": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "PushSync": (NullOrUndefined Nothing) }
+newSetIdentityPoolConfigurationResponse  = SetIdentityPoolConfigurationResponse { "CognitoStreams": Nothing, "IdentityPoolId": Nothing, "PushSync": Nothing }
 
 -- | Constructs SetIdentityPoolConfigurationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetIdentityPoolConfigurationResponse' :: ( { "IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "PushSync" :: NullOrUndefined (PushSync) , "CognitoStreams" :: NullOrUndefined (CognitoStreams) } -> {"IdentityPoolId" :: NullOrUndefined (IdentityPoolId) , "PushSync" :: NullOrUndefined (PushSync) , "CognitoStreams" :: NullOrUndefined (CognitoStreams) } ) -> SetIdentityPoolConfigurationResponse
-newSetIdentityPoolConfigurationResponse'  customize = (SetIdentityPoolConfigurationResponse <<< customize) { "CognitoStreams": (NullOrUndefined Nothing), "IdentityPoolId": (NullOrUndefined Nothing), "PushSync": (NullOrUndefined Nothing) }
+newSetIdentityPoolConfigurationResponse' :: ( { "IdentityPoolId" :: Maybe (IdentityPoolId) , "PushSync" :: Maybe (PushSync) , "CognitoStreams" :: Maybe (CognitoStreams) } -> {"IdentityPoolId" :: Maybe (IdentityPoolId) , "PushSync" :: Maybe (PushSync) , "CognitoStreams" :: Maybe (CognitoStreams) } ) -> SetIdentityPoolConfigurationResponse
+newSetIdentityPoolConfigurationResponse'  customize = (SetIdentityPoolConfigurationResponse <<< customize) { "CognitoStreams": Nothing, "IdentityPoolId": Nothing, "PushSync": Nothing }
 
 
 
@@ -1396,10 +1395,10 @@ newtype UpdateRecordsRequest = UpdateRecordsRequest
   { "IdentityPoolId" :: (IdentityPoolId)
   , "IdentityId" :: (IdentityId)
   , "DatasetName" :: (DatasetName)
-  , "DeviceId" :: NullOrUndefined (DeviceId)
-  , "RecordPatches" :: NullOrUndefined (RecordPatchList)
+  , "DeviceId" :: Maybe (DeviceId)
+  , "RecordPatches" :: Maybe (RecordPatchList)
   , "SyncSessionToken" :: (SyncSessionToken)
-  , "ClientContext" :: NullOrUndefined (ClientContext)
+  , "ClientContext" :: Maybe (ClientContext)
   }
 derive instance newtypeUpdateRecordsRequest :: Newtype UpdateRecordsRequest _
 derive instance repGenericUpdateRecordsRequest :: Generic UpdateRecordsRequest _
@@ -1409,18 +1408,18 @@ instance encodeUpdateRecordsRequest :: Encode UpdateRecordsRequest where encode 
 
 -- | Constructs UpdateRecordsRequest from required parameters
 newUpdateRecordsRequest :: DatasetName -> IdentityId -> IdentityPoolId -> SyncSessionToken -> UpdateRecordsRequest
-newUpdateRecordsRequest _DatasetName _IdentityId _IdentityPoolId _SyncSessionToken = UpdateRecordsRequest { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "SyncSessionToken": _SyncSessionToken, "ClientContext": (NullOrUndefined Nothing), "DeviceId": (NullOrUndefined Nothing), "RecordPatches": (NullOrUndefined Nothing) }
+newUpdateRecordsRequest _DatasetName _IdentityId _IdentityPoolId _SyncSessionToken = UpdateRecordsRequest { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "SyncSessionToken": _SyncSessionToken, "ClientContext": Nothing, "DeviceId": Nothing, "RecordPatches": Nothing }
 
 -- | Constructs UpdateRecordsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> SyncSessionToken -> ( { "IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "DeviceId" :: NullOrUndefined (DeviceId) , "RecordPatches" :: NullOrUndefined (RecordPatchList) , "SyncSessionToken" :: (SyncSessionToken) , "ClientContext" :: NullOrUndefined (ClientContext) } -> {"IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "DeviceId" :: NullOrUndefined (DeviceId) , "RecordPatches" :: NullOrUndefined (RecordPatchList) , "SyncSessionToken" :: (SyncSessionToken) , "ClientContext" :: NullOrUndefined (ClientContext) } ) -> UpdateRecordsRequest
-newUpdateRecordsRequest' _DatasetName _IdentityId _IdentityPoolId _SyncSessionToken customize = (UpdateRecordsRequest <<< customize) { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "SyncSessionToken": _SyncSessionToken, "ClientContext": (NullOrUndefined Nothing), "DeviceId": (NullOrUndefined Nothing), "RecordPatches": (NullOrUndefined Nothing) }
+newUpdateRecordsRequest' :: DatasetName -> IdentityId -> IdentityPoolId -> SyncSessionToken -> ( { "IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "DeviceId" :: Maybe (DeviceId) , "RecordPatches" :: Maybe (RecordPatchList) , "SyncSessionToken" :: (SyncSessionToken) , "ClientContext" :: Maybe (ClientContext) } -> {"IdentityPoolId" :: (IdentityPoolId) , "IdentityId" :: (IdentityId) , "DatasetName" :: (DatasetName) , "DeviceId" :: Maybe (DeviceId) , "RecordPatches" :: Maybe (RecordPatchList) , "SyncSessionToken" :: (SyncSessionToken) , "ClientContext" :: Maybe (ClientContext) } ) -> UpdateRecordsRequest
+newUpdateRecordsRequest' _DatasetName _IdentityId _IdentityPoolId _SyncSessionToken customize = (UpdateRecordsRequest <<< customize) { "DatasetName": _DatasetName, "IdentityId": _IdentityId, "IdentityPoolId": _IdentityPoolId, "SyncSessionToken": _SyncSessionToken, "ClientContext": Nothing, "DeviceId": Nothing, "RecordPatches": Nothing }
 
 
 
 -- | Returned for a successful UpdateRecordsRequest.
 newtype UpdateRecordsResponse = UpdateRecordsResponse 
-  { "Records" :: NullOrUndefined (RecordList)
+  { "Records" :: Maybe (RecordList)
   }
 derive instance newtypeUpdateRecordsResponse :: Newtype UpdateRecordsResponse _
 derive instance repGenericUpdateRecordsResponse :: Generic UpdateRecordsResponse _
@@ -1430,10 +1429,10 @@ instance encodeUpdateRecordsResponse :: Encode UpdateRecordsResponse where encod
 
 -- | Constructs UpdateRecordsResponse from required parameters
 newUpdateRecordsResponse :: UpdateRecordsResponse
-newUpdateRecordsResponse  = UpdateRecordsResponse { "Records": (NullOrUndefined Nothing) }
+newUpdateRecordsResponse  = UpdateRecordsResponse { "Records": Nothing }
 
 -- | Constructs UpdateRecordsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateRecordsResponse' :: ( { "Records" :: NullOrUndefined (RecordList) } -> {"Records" :: NullOrUndefined (RecordList) } ) -> UpdateRecordsResponse
-newUpdateRecordsResponse'  customize = (UpdateRecordsResponse <<< customize) { "Records": (NullOrUndefined Nothing) }
+newUpdateRecordsResponse' :: ( { "Records" :: Maybe (RecordList) } -> {"Records" :: Maybe (RecordList) } ) -> UpdateRecordsResponse
+newUpdateRecordsResponse'  customize = (UpdateRecordsResponse <<< customize) { "Records": Nothing }
 
